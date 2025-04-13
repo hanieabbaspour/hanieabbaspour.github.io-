@@ -9,23 +9,36 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #f8f6f1; /* سفید استخونی */
+      background-color: #f8f6f1;
       color: #2c2c2c;
+      scroll-behavior: smooth;
     }
     header {
       background-color: #fff;
       border-bottom: 1px solid #e2e2e2;
       padding: 2rem;
       text-align: center;
+      transition: background 0.3s ease;
+    }
+    header:hover {
+      background-color: #f0ece6;
     }
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       color: #3b3b3b;
+      transition: color 0.3s ease;
+    }
+    header h1:hover {
+      color: #1c2c58;
     }
     header p {
       color: #6b4c3b;
       font-style: italic;
+      transition: color 0.3s ease;
+    }
+    header p:hover {
+      color: #1c2c58;
     }
     nav {
       display: flex;
@@ -37,61 +50,84 @@
       text-decoration: none;
       color: #2f2f2f;
       font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #1c2c58;
     }
     .section {
       padding: 3rem 2rem;
       max-width: 960px;
       margin: auto;
+      transition: background 0.3s ease;
+    }
+    .section:hover {
+      background-color: #f1efea;
     }
     .section h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
-      border-bottom: 2px solid #ce9ba5; /* صورتی قرمز تیره */
+      border-bottom: 2px solid #1c2c58;
       padding-bottom: 0.5rem;
       color: #2c2c2c;
+      transition: border-color 0.3s ease;
     }
     .project-grid {
-      display: flex;
-      overflow-x: auto;
-      gap: 2rem;
       margin-top: 2rem;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 2rem;
     }
     .project {
-      flex: 0 0 auto;
-      background-color: #fff;
-      border-radius: 15px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-      width: 75%; /* اندازه دلخواه عکس */
       position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
+    }
+    .project:hover {
+      transform: scale(1.02);
     }
     .project img {
       width: 100%;
-      height: auto;
-      border-radius: 15px;
-      transition: transform 0.3s ease;
+      display: block;
     }
-    .project:hover img {
-      transform: scale(1.05);
-    }
-    .project-description {
+    .overlay {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(28, 44, 88, 0.85);
       color: #fff;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 1rem;
-      width: 80%;
-      text-align: center;
-      border-radius: 10px;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
     }
-    .project:hover .project-description {
+    .project:hover .overlay {
       opacity: 1;
+    }
+    .overlay h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    .overlay p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .video-placeholder {
+      background-color: #e4dcd3;
+      border: 2px dashed #aaa;
+      padding: 3rem;
+      text-align: center;
+      color: #777;
+      margin-top: 1rem;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    .video-placeholder:hover {
+      background-color: #ddd6cb;
     }
     footer {
       background-color: #eee;
@@ -99,6 +135,10 @@
       text-align: center;
       font-size: 0.9rem;
       color: #555;
+      transition: background 0.3s ease;
+    }
+    footer:hover {
+      background-color: #dcdcdc;
     }
   </style>
 </head>
@@ -119,104 +159,18 @@
     <p>I'm Hanie Abbaspour, a multidisciplinary designer combining classical elegance with modern aesthetics. My focus is on branding, motion design, and expressive visuals inspired by Classic Art and contemporary storytelling.</p>
   </section>
 
- <section class="section" id="portfolio">
-  <h2>Selected Works</h2>
-  <div class="project-grid">
-    <!-- پروژه اول با اسلاید -->
-    <div class="project">
-      <!-- بخش اسلاید -->
-      <div class="project-slider">
-        <div class="slider-container">
-          <!-- تصویر اول -->
-          <div class="slide">
-            <img src="images/bag01@0.5x.png" alt="norooz giftbag by hanieabbaspour" style="width:100%; border-radius: 12px;">
-          </div>
-          <!-- تصویر دوم -->
-          <div class="slide">
-            <img src="images/hirbodan bag mockup.png" alt="second image for project" style="width:100%; border-radius: 12px;">
-          </div>
-          <!-- تصویر سوم -->
-          <div class="slide">
-            <img src="images/hirbodan bag mockup.png" alt="third image for project" style="width:100%; border-radius: 12px;">
-          </div>
+  <section class="section" id="portfolio">
+    <h2>Selected Works</h2>
+    <div class="project-grid">
+      <div class="project">
+        <img src="images/bag01@0.5x.png" alt="norooz giftbag by hanieabbaspour">
+        <div class="overlay">
+          <h3>HIRBODAN PAPER BAG "Nowruz Gift Bag"</h3>
+          <p>This project aims to design a product that conveys a sense of authenticity, modernity, and Iranian culture at the same time using Iranian carpet motifs and warm traditional colors. This design was made as a special Nowruz giftbag by me for the Hirbodan management company.</p>
         </div>
-        <!-- دکمه‌های اسلاید -->
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
-      </div>
-      <div class="project-description">
-        <h3>HIRBODAN PAPER BAG "Nowruz Gift Bag"</h3>
-        <p>This project aims to design a product that conveys a sense of authenticity, modernity, and Iranian culture at the same time using Iranian carpet motifs and warm traditional colors. This design was made as a special Nowruz giftbag by me for the Hirbodan management company.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- اضافه کردن CSS برای استایل اسلاید -->
-<style>
-  .project-slider {
-    position: relative;
-    width: 100%;
-    max-width: 960px;
-    margin: auto;
-  }
-  .slider-container {
-    display: flex;
-    overflow: hidden;
-  }
-  .slide {
-    min-width: 100%;
-    transition: transform 0.5s ease;
-  }
-  .slide img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  }
-  .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 50%;
-  }
-  .prev {
-    left: 10px;
-  }
-  .next {
-    right: 10px;
-  }
-  .project-description {
-    padding-top: 1rem;
-  }
-</style>
-
-<!-- اضافه کردن جاوااسکریپت برای عملکرد اسلاید -->
-<script>
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length;
-
-  function moveSlide(step) {
-    currentSlide += step;
-    if (currentSlide < 0) {
-      currentSlide = totalSlides - 1;
-    } else if (currentSlide >= totalSlides) {
-      currentSlide = 0;
-    }
-    updateSlidePosition();
-  }
-
-  function updateSlidePosition() {
-    const newTransformValue = -currentSlide * 100;
-    document.querySelector('.slider-container').style.transform = `translateX(${newTransformValue}%)`;
-  }
-</script>
+  </section>
 
   <section class="section" id="reel">
     <h2>Demo Reel</h2>
