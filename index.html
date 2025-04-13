@@ -13,8 +13,6 @@
       font-family: 'Inter', sans-serif;
       scroll-snap-type: y mandatory;
       overflow-y: scroll;
-      background-color: #f8f6f1;
-      color: #2c2c2c;
     }
 
     section, header, footer {
@@ -24,12 +22,36 @@
       flex-direction: column;
       justify-content: center;
       padding: 4rem 2rem;
+      transition: background-color 1s ease;
     }
 
     header {
-      background-color: #fff;
+      background-color: #ffffff;
       border-bottom: 1px solid #e2e2e2;
       text-align: center;
+    }
+
+    #about {
+      background-color: #f8f6f1;
+    }
+
+    #portfolio {
+      background-color: #f0e7dc;
+    }
+
+    #reel {
+      background-color: #e9f0ef;
+    }
+
+    #contact {
+      background-color: #e6e4f5;
+    }
+
+    footer {
+      background-color: #ddd6f3;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
     }
 
     header h1 {
@@ -136,22 +158,15 @@
       opacity: 1;
     }
 
-    footer {
-      background-color: #eee;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
     .fade-section {
       opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 1s ease, transform 1s ease;
+      transform: translateY(100px) scale(0.95);
+      transition: opacity 1.2s ease, transform 1.2s ease;
     }
 
     .fade-section.visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
   </style>
 </head>
@@ -224,7 +239,7 @@
         }
       });
     }, {
-      threshold: 0.3
+      threshold: 0.4
     });
 
     sections.forEach(section => {
