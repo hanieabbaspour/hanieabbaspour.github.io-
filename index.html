@@ -25,6 +25,16 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       color: #3b3b3b;
+      animation: fadeInScale 1.5s ease-out forwards;
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    @keyframes fadeInScale {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     header p {
@@ -91,7 +101,7 @@
     }
 
     .project img {
-      width: 40%;
+      width: 24%;
       display: block;
       margin: auto;
       transition: transform 0.4s ease;
