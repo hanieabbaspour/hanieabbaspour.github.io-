@@ -2,89 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hanie Abbaspour | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background-color: #f8f6f1;
       color: #2c2c2c;
-      scroll-behavior: smooth;
     }
 
     header {
       background-color: #fff;
       border-bottom: 1px solid #e2e2e2;
-      padding: 2rem;
+      padding: 2rem 1rem 1rem;
       text-align: center;
       position: relative;
     }
 
     header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
+      font-size: 4rem;
       color: #3b3b3b;
+      margin: 0;
     }
 
     header p {
       color: #6b4c3b;
       font-style: italic;
+      margin-top: 0.5rem;
     }
 
-    .hamburger {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      width: 30px;
-      height: 25px;
+    .dropdown-toggle {
       cursor: pointer;
-      z-index: 999;
+      font-size: 1.5rem;
+      color: #001f3f;
+      margin-top: 1.5rem;
+      transition: transform 0.3s ease;
     }
 
-    .hamburger div {
-      background-color: #333;
-      height: 4px;
-      margin: 5px 0;
-      transition: 0.4s;
+    .dropdown-toggle:hover {
+      transform: translateY(3px);
     }
 
     nav {
-      position: absolute;
-      top: 70px;
-      right: 2rem;
       display: none;
-      flex-direction: row;
-      gap: 1rem;
-      background: #fff;
-      border: 1px solid #ccc;
-      padding: 1rem;
-      border-radius: 8px;
-      z-index: 998;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    nav.active {
+      display: flex;
+      opacity: 1;
     }
 
     nav a {
-      position: relative;
       text-decoration: none;
       color: #2f2f2f;
       font-weight: bold;
+      position: relative;
       padding: 0.5rem 1rem;
-      white-space: nowrap;
     }
 
     nav a:hover::after {
       content: "";
       position: absolute;
-      bottom: -4px;
+      bottom: -5px;
       left: 0;
       width: 100%;
       height: 3px;
       background-color: #001f3f;
-    }
-
-    .hamburger:hover + nav {
-      display: flex;
     }
 
     .section {
@@ -101,30 +92,20 @@
       color: #2c2c2c;
     }
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
     .project {
       position: relative;
       overflow: hidden;
       border-radius: 16px;
       transition: transform 0.3s ease;
-    }
-
-    .project:hover {
-      transform: scale(1.02);
+      margin-top: 2rem;
     }
 
     .project img {
       width: 60%;
       display: block;
       margin: auto;
-      transition: transform 0.4s ease;
       border-radius: 16px;
+      transition: transform 0.3s ease;
     }
 
     .project:hover img {
@@ -134,35 +115,20 @@
     .project-description {
       position: absolute;
       inset: 0;
-      background-color: rgba(0, 31, 63, 0.88);
+      background-color: rgba(0, 31, 63, 0.85);
       color: #fff;
-      padding: 1.5rem;
-      opacity: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      opacity: 0;
       text-align: center;
-      transition: opacity 0.4s ease;
+      padding: 1.5rem;
+      transition: opacity 0.3s ease;
     }
 
     .project:hover .project-description {
       opacity: 1;
-    }
-
-    .project-description h3 {
-      font-family: 'Playfair Display', serif;
-      margin-top: 0;
-    }
-
-    .video-placeholder {
-      background-color: #e4dcd3;
-      border: 2px dashed #aaa;
-      padding: 3rem;
-      text-align: center;
-      color: #777;
-      margin-top: 1rem;
-      border-radius: 8px;
     }
 
     footer {
@@ -178,14 +144,10 @@
   <header>
     <h1>Hanie Abbaspour</h1>
     <p>Motion & Graphic Designer | an unofficial artist</p>
-    <div class="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <nav>
+    <div class="dropdown-toggle" onclick="toggleMenu()">▼</div>
+    <nav id="mainMenu">
       <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
+      <a href="#portfolio">My Designs</a>
       <a href="#reel">Videos</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -198,13 +160,11 @@
 
   <section class="section" id="portfolio">
     <h2>Selected Works</h2>
-    <div class="project-grid">
-      <div class="project">
-        <img src="images/bag01@0.5x.png" alt="norooz giftbag by hanieabbaspour">
-        <div class="project-description">
-          <h3>HIRBODAN PAPER BAG "Nowruz Gift Bag"</h3>
-          <p>This project aims to design a product that conveys a sense of authenticity, modernity, and Iranian culture at the same time using Iranian carpet motifs and warm traditional colors. This design was made as a special Nowruz giftbag by me for the Hirbodan management company.</p>
-        </div>
+    <div class="project">
+      <img src="images/bag01@0.5x.png" alt="norooz giftbag by hanieabbaspour">
+      <div class="project-description">
+        <h3>HIRBODAN PAPER BAG "Nowruz Gift Bag"</h3>
+        <p>This project aims to design a product that conveys a sense of authenticity, modernity, and Iranian culture at the same time using Iranian carpet motifs and warm traditional colors.</p>
       </div>
     </div>
   </section>
@@ -220,11 +180,26 @@
   <section class="section" id="contact">
     <h2>Contact</h2>
     <p>You can reach me at: <strong>hanieabbaspour22@outlook.com</strong></p>
-    <p>Or find me on Instagram & Behance: <strong>@motion.mountain</strong></p>
+    <p>Instagram & Behance: <strong>@motion.mountain</strong></p>
   </section>
 
   <footer>
     © 2025 Hanie Abbaspour | Designed with love & motion
   </footer>
+
+  <script>
+    const toggleBtn = document.querySelector('.dropdown-toggle');
+    const nav = document.getElementById('mainMenu');
+
+    toggleBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!toggleBtn.contains(e.target) && !nav.contains(e.target)) {
+        nav.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
