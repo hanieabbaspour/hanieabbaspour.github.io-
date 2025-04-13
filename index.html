@@ -1,144 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HANIE ABBASPOUR | Motion & Graphic Designer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hanie Abbaspour | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #f8f6f1;
+      background-color: #F9F6EE;
       color: #2c2c2c;
-      scroll-behavior: smooth;
     }
+
     header {
-      background-color: #fff;
+      background-color: #FAF9F6;
       border-bottom: 1px solid #e2e2e2;
       padding: 2rem;
       text-align: center;
-      transition: background 0.3s ease;
     }
-    header:hover {
-      background-color: #f0ece6;
-    }
+
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       color: #3b3b3b;
-      transition: color 0.3s ease;
     }
-    header h1:hover {
-      color: #1c2c58;
-    }
+
     header p {
       color: #6b4c3b;
       font-style: italic;
-      transition: color 0.3s ease;
     }
-    header p:hover {
-      color: #1c2c58;
-    }
+
     nav {
       display: flex;
       justify-content: center;
       gap: 2rem;
       margin-top: 1rem;
     }
+
     nav a {
       text-decoration: none;
       color: #2f2f2f;
       font-weight: bold;
-      transition: color 0.3s ease;
     }
-    nav a:hover {
-      color: #1c2c58;
-    }
+
     .section {
       padding: 3rem 2rem;
       max-width: 960px;
       margin: auto;
-      transition: background 0.3s ease;
     }
-    .section:hover {
-      background-color: #f1efea;
-    }
+
     .section h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
-      border-bottom: 2px solid #1c2c58;
+      border-bottom: 2px solid #001f3f;
       padding-bottom: 0.5rem;
       color: #2c2c2c;
-      transition: border-color 0.3s ease;
     }
+
     .project-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
       margin-top: 2rem;
     }
+
     .project {
       position: relative;
-      border-radius: 12px;
       overflow: hidden;
+      border-radius: 16px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
+
     .project:hover {
-      transform: scale(1.02);
+      transform: translateY(-6px);
     }
+
     .project img {
-      width: 100%;
+      width: 60%;
       display: block;
+      margin: auto;
+      transition: transform 0.3s ease;
     }
-    .overlay {
+
+    .project-description {
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: 0;
       right: 0;
-      bottom: 0;
-      background: rgba(28, 44, 88, 0.85);
+      background-color: rgba(0, 31, 63, 0.85);
       color: #fff;
+      padding: 1rem;
       opacity: 0;
       transition: opacity 0.4s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
     }
-    .project:hover .overlay {
+
+    .project:hover .project-description {
       opacity: 1;
     }
-    .overlay h3 {
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
+
+    .project-description h3 {
+      margin-top: 0;
+      font-family: 'Playfair Display', serif;
     }
-    .overlay p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
+
     .video-placeholder {
-      background-color: #e4dcd3;
+      background-color: #E9DCC9;
       border: 2px dashed #aaa;
       padding: 3rem;
       text-align: center;
       color: #777;
       margin-top: 1rem;
       border-radius: 8px;
-      transition: background 0.3s ease;
     }
-    .video-placeholder:hover {
-      background-color: #ddd6cb;
-    }
+
     footer {
       background-color: #eee;
       padding: 2rem;
       text-align: center;
       font-size: 0.9rem;
       color: #555;
-      transition: background 0.3s ease;
-    }
-    footer:hover {
-      background-color: #dcdcdc;
     }
   </style>
 </head>
@@ -147,24 +129,24 @@
     <h1>Hanie Abbaspour</h1>
     <p>Motion & Graphic Designer | an unofficial artist</p>
     <nav>
-      <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#reel">Videos</a>
-      <a href="#contact">Contact</a>
+      <a href="#About">About</a>
+      <a href="#My designs">My designs</a>
+      <a href="#Videos">Videos</a>
+      <a href="#Contact">Contact</a>
     </nav>
   </header>
 
   <section class="section" id="about">
-    <h2>About Me</h2>
+    <h2>Who am i?</h2>
     <p>I'm Hanie Abbaspour, a multidisciplinary designer combining classical elegance with modern aesthetics. My focus is on branding, motion design, and expressive visuals inspired by Classic Art and contemporary storytelling.</p>
   </section>
 
-  <section class="section" id="portfolio">
+  <section class="section" id="my designs">
     <h2>Selected Works</h2>
     <div class="project-grid">
       <div class="project">
-        <img src="images/hirbodan bag mockup.png" alt="norooz giftbag by hanieabbaspour">
-        <div class="overlay">
+        <img src="images/hirbodan bag mockup.png" alt="Norooz giftbag by hanieabbaspour">
+        <div class="project-description">
           <h3>HIRBODAN PAPER BAG "Nowruz Gift Bag"</h3>
           <p>This project aims to design a product that conveys a sense of authenticity, modernity, and Iranian culture at the same time using Iranian carpet motifs and warm traditional colors. This design was made as a special Nowruz giftbag by me for the Hirbodan management company.</p>
         </div>
