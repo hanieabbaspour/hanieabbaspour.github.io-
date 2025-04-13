@@ -6,23 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hanie Abbaspour | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
-      scroll-snap-type: y mandatory;
-      overflow-y: scroll;
+      overflow-x: hidden;
     }
 
     section, header, footer {
-      scroll-snap-align: start;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding: 4rem 2rem;
-      transition: background-color 1s ease;
     }
 
     header {
@@ -32,23 +31,23 @@
     }
 
     #about {
-      background-color: #f8f6f1;
+      background-color: #fdfbf6;
     }
 
     #portfolio {
-      background-color: #f0e7dc;
+      background-color: #f2efe6;
     }
 
     #reel {
-      background-color: #e9f0ef;
+      background-color: #e4e7ed;
     }
 
     #contact {
-      background-color: #e6e4f5;
+      background-color: #d5dce5;
     }
 
     footer {
-      background-color: #ddd6f3;
+      background-color: #c4cddc;
       text-align: center;
       font-size: 0.9rem;
       color: #555;
@@ -157,17 +156,6 @@
     .project:hover .project-description {
       opacity: 1;
     }
-
-    .fade-section {
-      opacity: 0;
-      transform: translateY(100px) scale(0.95);
-      transition: opacity 1.2s ease, transform 1.2s ease;
-    }
-
-    .fade-section.visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
   </style>
 </head>
 <body>
@@ -183,12 +171,12 @@
     </nav>
   </header>
 
-  <section class="section fade-section" id="about">
+  <section class="section" id="about">
     <h2>About Me</h2>
     <p>I'm Hanie Abbaspour, a multidisciplinary designer combining classical elegance with modern aesthetics. My focus is on branding, motion design, and expressive visuals inspired by Classic Art and contemporary storytelling.</p>
   </section>
 
-  <section class="section fade-section" id="portfolio">
+  <section class="section" id="portfolio">
     <h2>Selected Works</h2>
     <div class="project">
       <img src="images/bag01@0.5x.png" alt="norooz giftbag by hanieabbaspour">
@@ -199,7 +187,7 @@
     </div>
   </section>
 
-  <section class="section fade-section" id="reel">
+  <section class="section" id="reel">
     <h2>Demo Reel</h2>
     <div class="video-placeholder">
       My demo reel will appear here soon.
@@ -207,13 +195,13 @@
     </div>
   </section>
 
-  <section class="section fade-section" id="contact">
+  <section class="section" id="contact">
     <h2>Contact</h2>
     <p>You can reach me at: <strong>hanieabbaspour22@outlook.com</strong></p>
     <p>Instagram & Behance: <strong>@motion.mountain</strong></p>
   </section>
 
-  <footer class="fade-section">
+  <footer>
     © 2025 Hanie Abbaspour | Designed with love & motion
   </footer>
 
@@ -231,19 +219,21 @@
       }
     });
 
-    const sections = document.querySelectorAll('.fade-section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray(".section").forEach(section => {
+      gsap.from(section, {
+        opacity: 0,
+        y: 100,
+        scale: 0.9,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "play none none none"
         }
       });
-    }, {
-      threshold: 0.4
-    });
-
-    sections.forEach(section => {
-      observer.observe(section);
     });
   </script>
 </body>
