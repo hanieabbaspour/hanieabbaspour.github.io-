@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanie Abbaspour | Motion & Graphic Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f6f1; /* سفید استخونی */
+      color: #2c2c2c;
+    }
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #e2e2e2;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #3b3b3b;
+    }
+    header p {
+      color: #6b4c3b;
+      font-style: italic;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #2f2f2f;
+      font-weight: bold;
+    }
+    .section {
+      padding: 3rem 2rem;
+      max-width: 960px;
+      margin: auto;
+    }
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      border-bottom: 2px solid #ce9ba5; /* صورتی قرمز تیره */
+      padding-bottom: 0.5rem;
+      color: #2c2c2c;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .project {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .project h3 {
+      margin-top: 0;
+      color: #3e3e3e;
+    }
+    footer {
+      background-color: #eee;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .video-placeholder {
+      background-color: #e4dcd3;
+      border: 2px dashed #aaa;
+      padding: 3rem;
+      text-align: center;
+      color: #777;
+      margin-top: 1rem;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>hanieabbaspour</h1>
+    <p>Motion & Graphic Designer | Art Nouveau Aesthetic</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#reel">Demo Reel</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <p>I'm Hanie Abbaspour, a multidisciplinary designer combining classical elegance with modern aesthetics. My focus is on motion design, branding, and expressive visuals inspired by Art Nouveau and contemporary storytelling.</p>
+  </section>
+
+  <section class="section" id="portfolio">
+    <h2>Selected Works</h2>
+    <div class="project-grid">
+      <div class="project">
+        <h3>Project Title 1</h3>
+        <p>Description of the work, tools used, and your role.</p>
+      </div>
+      <div class="project">
+        <h3>Project Title 2</h3>
+        <p>Description of another work, style, and execution.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reel">
+    <h2>Demo Reel</h2>
+    <div class="video-placeholder">
+      Your demo reel will appear here soon.
+      <br>Upload to YouTube or Vimeo and embed the link.
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>You can reach me at: <strong>hanie.design@example.com</strong></p>
+    <p>Or find me on Instagram & Behance: <strong>@hanie.design</strong></p>
+  </section>
+
+  <footer>
+    © 2025 Hanie Abbaspour | Designed with love & motion
+  </footer>
+</body>
+</html>
