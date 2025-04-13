@@ -105,12 +105,67 @@
   <section class="section" id="portfolio">
     <h2>Selected Works</h2>
     <div class="project-grid">
-      <div class="project">
-        <h3>HIRBODAN PAPER BAG"nowrooz gift bag"</h3>
-        <img src="images/bag01@0.5x.png" alt="norooz giftbag by hanieabbaspour" style="width:100%; border-radius: 15px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
-        <p>This project aims to design a product that conveys a sense of authenticity, modernity, and Iranian culture at the same time using Iranian carpet motifs and warm traditional colors. This design was made as a special Nowruz giftbag by me for the Hirbodan management company.</p>
+  <div class="project" style="padding: 0;">
+    <div style="position: relative; overflow: hidden; border-radius: 15px;">
+      <div class="slider">
+        <img src="images/hirbodan bag mockup.png" alt="HIRBODAN mockup 1">
+        <img src="images/bag01@0.5x.png" alt="HIRBODAN mockup 2">
+       
+      </div>
+      <div class="overlay">
+        <h3>HIRBODAN PAPER BAG</h3>
+        <p>This Nowruz giftbag combines Iranian carpet motifs, tradition, and a touch of modern flair. Designed for Hirbodan Co.</p>
       </div>
     </div>
+  </div>
+</div>
+
+<style>
+  .slider {
+    display: flex;
+    animation: slideShow 12s infinite ease-in-out;
+    width: 300%;
+  }
+
+  .slider img {
+    width: 100%;
+    flex: 1 0 100%;
+    object-fit: cover;
+  }
+
+  @keyframes slideShow {
+    0%   { transform: translateX(0%); }
+    33%  { transform: translateX(0%); }
+    40%  { transform: translateX(-100%); }
+    66%  { transform: translateX(-100%); }
+    73%  { transform: translateX(-200%); }
+    100% { transform: translateX(-200%); }
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    font-size: 0.9rem;
+    color: #3e3e3e;
+  }
+
+  .project:hover .overlay {
+    transform: translateY(0%);
+  }
+
+  .overlay h3 {
+    margin: 0 0 0.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+  }
+</style>
+
   </section>
 
   <section class="section" id="reel">
