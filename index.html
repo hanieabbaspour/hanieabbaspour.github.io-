@@ -9,12 +9,13 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #F9F6EE;
+      background-color: #f8f6f1;
       color: #2c2c2c;
+      scroll-behavior: smooth;
     }
 
     header {
-      background-color: #FAF9F6;
+      background-color: #fff;
       border-bottom: 1px solid #e2e2e2;
       padding: 2rem;
       text-align: center;
@@ -36,16 +37,29 @@
       justify-content: center;
       gap: 2rem;
       margin-top: 1rem;
+      position: relative;
     }
 
     nav a {
+      position: relative;
       text-decoration: none;
       color: #2f2f2f;
       font-weight: bold;
+      padding: 0.5rem 1rem;
+    }
+
+    nav a:hover::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #001f3f;
     }
 
     .section {
-      padding: 3rem 2rem;
+      padding: 4rem 2rem;
       max-width: 960px;
       margin: auto;
     }
@@ -69,30 +83,37 @@
       position: relative;
       overflow: hidden;
       border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
 
     .project:hover {
-      transform: translateY(-6px);
+      transform: scale(1.02);
     }
 
     .project img {
-      width: 60%;
+      width: 40%;
       display: block;
       margin: auto;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease;
+      border-radius: 16px;
+    }
+
+    .project:hover img {
+      transform: scale(1.05);
     }
 
     .project-description {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(0, 31, 63, 0.85);
+      inset: 0;
+      background-color: rgba(0, 31, 63, 0.88);
       color: #fff;
-      padding: 1rem;
+      padding: 1.5rem;
       opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       transition: opacity 0.4s ease;
     }
 
@@ -101,12 +122,12 @@
     }
 
     .project-description h3 {
-      margin-top: 0;
       font-family: 'Playfair Display', serif;
+      margin-top: 0;
     }
 
     .video-placeholder {
-      background-color: #E9DCC9;
+      background-color: #e4dcd3;
       border: 2px dashed #aaa;
       padding: 3rem;
       text-align: center;
@@ -129,23 +150,23 @@
     <h1>Hanie Abbaspour</h1>
     <p>Motion & Graphic Designer | an unofficial artist</p>
     <nav>
-      <a href="#About">About</a>
-      <a href="#My designs">My designs</a>
-      <a href="#Videos">Videos</a>
-      <a href="#Contact">Contact</a>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#reel">Videos</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section class="section" id="about">
-    <h2>Who am i?</h2>
+    <h2>About Me</h2>
     <p>I'm Hanie Abbaspour, a multidisciplinary designer combining classical elegance with modern aesthetics. My focus is on branding, motion design, and expressive visuals inspired by Classic Art and contemporary storytelling.</p>
   </section>
 
-  <section class="section" id="my designs">
+  <section class="section" id="portfolio">
     <h2>Selected Works</h2>
     <div class="project-grid">
       <div class="project">
-        <img src="images/hirbodan bag mockup.png" alt="Norooz giftbag by hanieabbaspour">
+        <img src="images/bag01@0.5x.png" alt="norooz giftbag by hanieabbaspour">
         <div class="project-description">
           <h3>HIRBODAN PAPER BAG "Nowruz Gift Bag"</h3>
           <p>This project aims to design a product that conveys a sense of authenticity, modernity, and Iranian culture at the same time using Iranian carpet motifs and warm traditional colors. This design was made as a special Nowruz giftbag by me for the Hirbodan management company.</p>
