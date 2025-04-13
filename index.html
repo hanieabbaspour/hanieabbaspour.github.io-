@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <!-- فونت‌ها و استایل سفارشی -->
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@300;500&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@300;500&display=swap" rel="stylesheet" />
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hanie Abbaspour | Portfolio</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -141,42 +142,10 @@
       font-size: 0.9rem;
       color: #555;
     }
-
-    /* المان گرافیکی گوشه‌ها */
-    .graphic-corner {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .corner-top-left {
-      top: 20px;
-      left: 20px;
-    }
-
-    .corner-top-right {
-      top: 20px;
-      right: 20px;
-    }
-
-    .graphic-corner img {
-      width: 100%;
-      height: auto;
-    }
   </style>
 </head>
 <body>
   <header>
-    <!-- المان‌های گرافیکی گوشه هدر -->
-    <div class="graphic-corner corner-top-left">
-      <img src="images/flower.png" alt="graphic decoration left" />
-    </div>
-    <div class="graphic-corner corner-top-right">
-      <img src="images/flower-R.png" alt="graphic decoration right" />
-    </div>
-
     <h1>Hanie Abbaspour</h1>
     <p>Motion & Graphic Designer | an unofficial artist</p>
     <div class="dropdown-toggle" onclick="toggleMenu()">▼</div>
@@ -188,12 +157,12 @@
     </nav>
   </header>
 
-  <section class="section" id="about">
+  <section class="section" id="about" data-aos="fade-up" data-aos-delay="0">
     <h2>About Me</h2>
     <p>I'm Hanie Abbaspour, a multidisciplinary designer combining classical elegance with modern aesthetics. My focus is on branding, motion design, and expressive visuals inspired by Classic Art and contemporary storytelling.</p>
   </section>
 
-  <section class="section" id="portfolio">
+  <section class="section" id="portfolio" data-aos="fade-up" data-aos-delay="200">
     <h2>Selected Works</h2>
     <div class="project">
       <img src="images/bag01@0.5x.png" alt="norooz giftbag by hanieabbaspour">
@@ -204,7 +173,7 @@
     </div>
   </section>
 
-  <section class="section" id="reel">
+  <section class="section" id="reel" data-aos="fade-up" data-aos-delay="400">
     <h2>Demo Reel</h2>
     <div class="video-placeholder">
       My demo reel will appear here soon.
@@ -212,16 +181,17 @@
     </div>
   </section>
 
-  <section class="section" id="contact">
+  <section class="section" id="contact" data-aos="fade-up" data-aos-delay="600">
     <h2>Contact</h2>
     <p>You can reach me at: <strong>hanieabbaspour22@outlook.com</strong></p>
     <p>Instagram & Behance: <strong>@motion.mountain</strong></p>
   </section>
 
-  <footer>
+  <footer data-aos="fade-up" data-aos-delay="800">
     © 2025 Hanie Abbaspour | Designed with love & motion
   </footer>
 
+  <!-- Script to toggle dropdown menu -->
   <script>
     const toggleBtn = document.querySelector('.dropdown-toggle');
     const nav = document.getElementById('mainMenu');
@@ -234,6 +204,15 @@
       if (!toggleBtn.contains(e.target) && !nav.contains(e.target)) {
         nav.classList.remove('active');
       }
+    });
+  </script>
+
+  <!-- AOS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true
     });
   </script>
 </body>
