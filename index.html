@@ -111,26 +111,29 @@
     }
 
     .about-content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      padding: 3rem;
+     display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem;
+  flex-wrap: wrap;
     }
 
     .about-text {
-      flex: 1;
-      max-width: 600px;
-      font-size: 1.1rem;
-      color: #1C477F;
+       flex: 1;
+  max-width: 600px;
+  font-size: 1.1rem;
+  color: #1C477F;
     }
 
     .about-img {
-      flex: 1;
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
+     flex: 1;
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
     }
 
     #portfolio {
@@ -204,13 +207,13 @@
   <section class="section" id="about">
     <h2>Who am I?</h2>
     <div class="about-content">
-      <div class="about-text">
-        <p>
-          I'm Hanie Abbaspour, a multidisciplinary designer combining classical elegance with modern aesthetics. My focus is on branding, motion design, and expressive visuals inspired by Classic Art and contemporary storytelling.
-        </p>
-      </div>
-      <img src="images/mi-foto-0.png" alt="Hanie Abbaspour" class="about-img" />
+    <div class="about-text">
+      <p>
+        I'm Hanie Abbaspour, a multidisciplinary designer combining classical elegance with modern aesthetics. My focus is on branding, motion design, and expressive visuals inspired by Classic Art and contemporary storytelling.
+      </p>
     </div>
+    <img src="images/myphoto.jpg" alt="Hanie Abbaspour" class="about-img" />
+  </div>
 
     <!-- TIMELINE SECTION -->
     <section id="timeline">
