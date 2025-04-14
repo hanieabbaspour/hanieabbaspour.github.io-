@@ -30,13 +30,12 @@
     }
 
     footer {
-  background: linear-gradient(to bottom, #1C477F 0%, #E9E2CE 55%, #E9E2CE 100%);
-  text-align: center;
-  padding-top: 500px;
-  font-size: 0.8rem;
-  color: #1C477F;
-}
-
+      background: linear-gradient(to bottom, #1C477F 0%, #E9E2CE 55%, #E9E2CE 100%);
+      text-align: center;
+      padding-top: 2rem;  /* اصلاح ارتفاع برای موبایل */
+      font-size: 0.8rem;
+      color: #1C477F;
+    }
 
     header h1 {
       font-family: 'Dancing Script', cursive;
@@ -104,44 +103,44 @@
       margin-bottom: 1.5rem;
       font-family: 'Playfair Display', serif;
     }
-    
-    #about h2 {
-  color: #1C477F;
-}
 
-  #portfolio h2 {
-    color: #1C477F;
-  }
+    #about h2 {
+      color: #1C477F;
+    }
+
+    #portfolio h2 {
+      color: #1C477F;
+    }
 
     #about {
       background-color: #E9E2CE;
     }
 
     .about-content {
-     display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem;
-  flex-wrap: wrap;
-  color: #1C477F;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem;
+      flex-wrap: wrap;
+      color: #1C477F;
     }
 
     .about-text {
-       flex: 1;
-  max-width: 600px;
-  font-size: 1.1rem;
-  color: #1C477F;
+      flex: 1;
+      max-width: 600px;
+      font-size: 1.1rem;
+      color: #1C477F;
     }
 
     .about-img {
-     flex: 1;
-  max-width: 700px;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 0;
-  box-shadow: none;
+      flex: 1;
+      max-width: 700px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 0;
+      box-shadow: none;
     }
 
     #portfolio {
@@ -166,10 +165,8 @@
     .project-description {
       max-width: 600px;
       margin-top: 1rem;
-      color: #1C477F
+      color: #1C477F;
     }
-    
-
 
     #reel {
       background-color: #1C477F;
@@ -196,11 +193,48 @@
       color: #1C477F;
     }
 
-
     .timeline-arrow {
       margin: 1rem 0;
     }
 
+    /* اصلاحات برای موبایل */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem; /* کاهش اندازه برای موبایل */
+      }
+
+      h2 {
+        font-size: 1.8rem; /* کاهش اندازه برای موبایل */
+      }
+
+      .about-content {
+        flex-direction: column; /* تغییر جهت flex برای موبایل */
+        gap: 1rem; /* کاهش فضای خالی */
+      }
+
+      .about-img, .project img {
+        max-width: 100%; /* تصاویر به طور کامل تطبیق دهند */
+        height: auto;
+      }
+
+      nav a {
+        padding: 1rem 2rem; /* افزایش فضای دکمه‌ها */
+      }
+
+      #timeline {
+        flex-direction: column; /* تبدیل تایم‌لاین به عمودی */
+        padding: 1rem;
+      }
+
+      .timeline-arrow {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      footer {
+        padding-top: 2rem; /* کاهش padding برای موبایل */
+      }
+    }
   </style>
 </head>
 <body>
@@ -219,13 +253,13 @@
   <section id="about">
     <h2>Who am I?</h2>
     <div class="about-content">
-    <div class="about-text">
-      <p>
-        I'm Hanie Abbaspour, a multidisciplinary designer combining classical elegance with modern aesthetics. My focus is on branding, motion design, and expressive visuals inspired by Classic Art and contemporary storytelling.
-      </p>
+      <div class="about-text">
+        <p>
+          I'm Hanie Abbaspour, a multidisciplinary designer combining classical elegance with modern aesthetics. My focus is on branding, motion design, and expressive visuals inspired by Classic Art and contemporary storytelling.
+        </p>
+      </div>
+      <img src="images/mi-foto-0.png" alt="Hanie Abbaspour" class="about-img" />
     </div>
-    <img src="images/mi-foto-0.png" alt="Hanie Abbaspour" class="about-img" />
-  </div>
 
     <!-- TIMELINE SECTION -->
     <section id="timeline">
