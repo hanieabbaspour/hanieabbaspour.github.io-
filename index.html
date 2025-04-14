@@ -23,6 +23,7 @@
       flex-direction: column;
       justify-content: center;
       padding: 4rem 2rem;
+      position: relative;
     }
 
     header {
@@ -137,12 +138,23 @@
       height: 3px;
       background-color: #001f3f;
     }
+
+    /* استایل عنوان‌ها با فاصله ۴۰ پیکسل از بالا */
     h2 {
-  font-size: 2.5rem; /* برای بزرگ‌تر کردن متن */
-  text-align: center; /* برای وسط چین کردن */
-  font-style: italic; /* برای ایتالیک کردن */
-  margin-bottom: 2rem;
-}
+      text-align: center;
+      font-size: 2.5rem;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      font-family: 'Playfair Display', serif;
+      position: absolute;
+      top: 80px;
+      width: 100%;
+      z-index: 2;
+    }
+
+    #about h2, #portfolio h2, #reel h2, #contact h2 {
+      margin-top: 0;
+    }
 
   </style>
 </head>
@@ -160,9 +172,9 @@
   </header>
 
   <section class="section" id="about">
+    <h2>Who am I?</h2>
     <div class="about-content">
       <div class="about-text">
-        <h2>Who am I?</h2>
         <p>
           I'm Hanie Abbaspour, a multidisciplinary designer combining classical elegance with modern aesthetics. My focus is on branding, motion design, and expressive visuals inspired by Classic Art and contemporary storytelling.
         </p>
@@ -171,71 +183,59 @@
     </div>
   </section>
 
-  <!-- TIMELINE SECTION -->
-  <!-- TIMELINE SECTION -->
-<section id="timeline" style="background-color: #fdfbf6; padding: 4rem 0 2rem 0; display: flex; flex-direction: column; align-items: center;">
-  <div style="display: flex; flex-direction: row; align-items: center; gap: 2rem; flex-wrap: nowrap; overflow-x: auto; padding: 2rem;">
-
-    <!-- دایره 2019 -->
-    <div class="timeline-circle">
-      <div>
-        <h3 style="margin-bottom: 1rem;">2019</h3>
-        <p>Started my career in graphic design, focusing on branding and visual identity. Worked with small clients to build my foundational skills.</p>
+  <section id="timeline" style="background-color: #fdfbf6; padding: 4rem 0 2rem 0; display: flex; flex-direction: column; align-items: center;">
+    <div style="display: flex; flex-direction: row; align-items: center; gap: 2rem; flex-wrap: nowrap; overflow-x: auto; padding: 2rem;">
+      <!-- دایره‌ها و فلش‌های تایم‌لاین -->
+      <div class="timeline-circle">
+        <div>
+          <h3 style="margin-bottom: 1rem;">2019</h3>
+          <p>Started my career in graphic design, focusing on branding and visual identity.</p>
+        </div>
+      </div>
+      <div class="timeline-arrow">
+        <svg width="80" height="30" viewBox="0 0 80 30">
+          <line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/>
+          <polygon points="70,10 80,15 70,20" fill="#1C477F"/>
+        </svg>
+      </div>
+      <div class="timeline-circle">
+        <div>
+          <h3 style="margin-bottom: 1rem;">2020</h3>
+          <p>Joined a digital marketing agency as a motion designer. Created animated content.</p>
+        </div>
+      </div>
+      <div class="timeline-arrow">
+        <svg width="80" height="30" viewBox="0 0 80 30">
+          <line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/>
+          <polygon points="70,10 80,15 70,20" fill="#1C477F"/>
+        </svg>
+      </div>
+      <div class="timeline-circle">
+        <div>
+          <h3 style="margin-bottom: 1rem;">2021</h3>
+          <p>Launched my own personal brand and began taking freelance clients.</p>
+        </div>
       </div>
     </div>
-
-    <!-- فلش -->
-    <div class="timeline-arrow">
-      <svg width="80" height="30" viewBox="0 0 80 30">
-        <line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/>
-        <polygon points="70,10 80,15 70,20" fill="#1C477F"/>
-      </svg>
-    </div>
-
-    <!-- دایره 2020 -->
-    <div class="timeline-circle">
-      <div>
-        <h3 style="margin-bottom: 1rem;">2020</h3>
-        <p>Joined a digital marketing agency as a motion designer. Created animated content for social campaigns and learned video production tools.</p>
-      </div>
-    </div>
-
-    <!-- فلش -->
-    <div class="timeline-arrow">
-      <svg width="80" height="30" viewBox="0 0 80 30">
-        <line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/>
-        <polygon points="70,10 80,15 70,20" fill="#1C477F"/>
-      </svg>
-    </div>
-
-    <!-- دایره 2021 -->
-    <div class="timeline-circle">
-      <div>
-        <h3 style="margin-bottom: 1rem;">2021</h3>
-        <p>Launched my own personal brand and began taking freelance clients. Developed a clean visual style and showcased my work online.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
+  </section>
 
   <section class="section" id="portfolio">
-  <h2>My designs</h2>
-  <div class="project">
-    <img src="images/bagmockup.png" alt="norooz giftbag by hanieabbaspour">
-    <div class="project-description">
-      <h3>HIRBODAN PAPER BAG "Nowruz Gift Bag"</h3>
-      <p>This project aims to design a product that conveys a sense of authenticity, modernity, and Iranian culture at the same time using Iranian carpet motifs and warm traditional colors.</p>
+    <h2>My designs</h2>
+    <div class="project">
+      <img src="images/bagmockup.png" alt="norooz giftbag by hanieabbaspour">
+      <div class="project-description">
+        <h3>HIRBODAN PAPER BAG "Nowruz Gift Bag"</h3>
+        <p>This project aims to design a product that conveys a sense of authenticity, modernity, and Iranian culture at the same time using Iranian carpet motifs and warm traditional colors.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section class="section" id="reel">
-  <h2>My videos</h2> <!-- تغییر نام از "My Videos" به "Demo Reel" -->
-  <div class="video-placeholder">
-    My demo reel will appear here soon.<br>Upload to YouTube or Vimeo and embed the link.
-  </div>
-</section>
+    <h2>My videos</h2>
+    <div class="video-placeholder">
+      My demo reel will appear here soon.<br>Upload to YouTube or Vimeo and embed the link.
+    </div>
+  </section>
 
   <section class="section" id="contact">
     <h2>Contact</h2>
