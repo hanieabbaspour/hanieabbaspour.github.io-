@@ -1,4 +1,171 @@
-<!-- TIMELINE SECTION -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@300;500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hanie Abbaspour | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    section, header, footer {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 2rem;
+    }
+
+    header {
+      background: linear-gradient(to right, #f2efe6, #e9e2ce);
+      border-bottom: 5px solid #e2e2e2;
+      text-align: center;
+    }
+
+    #about {
+      background-color: #fdfbf6;
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 3rem;
+    }
+
+    .about-text {
+      flex: 1;
+      max-width: 600px;
+      font-size: 1.1rem;
+      color: #1C477F;
+    }
+
+    .about-img {
+      flex: 1;
+      height: 100vh;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    #portfolio {
+      background-color: #f2efe6;
+    }
+
+    #reel {
+      background-color: #1C477F;
+      color: #E9E2CE;
+    }
+
+    #contact {
+      background: radial-gradient(circle at center, #7399BD 0%, #7399BD 10%, #1C477F 30%, #1C477F 75%);
+      color: #E9E2CE;
+    }
+
+    footer {
+      background: linear-gradient(to bottom, #1C477F 0%, #E9E2CE 55%, #E9E2CE 100%);
+      text-align: center;
+      font-size: 0.7rem;
+      color: #1C477F;
+    }
+
+    header h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 4rem;
+      color: #1C477F;
+      margin: 0;
+    }
+
+    header p {
+      color: #7399BD;
+      font-style: italic;
+      margin-top: 0.45rem;
+    }
+
+    .dropdown-toggle {
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #1C477F;
+      margin-top: 1.5rem;
+      transition: transform 0.8s ease;
+    }
+
+    .dropdown-toggle:hover {
+      transform: translateY(4px);
+    }
+
+    nav {
+      display: none;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    nav.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1C477F;
+      font-weight: bold;
+      font-style: italic;
+      position: relative;
+      padding: 0.5rem 1rem;
+    }
+
+    nav a:hover::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #001f3f;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hanie Abbaspour</h1>
+    <p>Motion & Graphic Designer | an unofficial artist</p>
+    <div class="dropdown-toggle" onclick="toggleMenu()">▼</div>
+    <nav id="mainMenu">
+      <a href="#about">Who am i?</a>
+      <a href="#portfolio">My Designs</a>
+      <a href="#reel">My Videos</a>
+      <a href="#contact">Contact me</a>
+    </nav>
+  </header>
+
+  <section class="section" id="about">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Who am I?</h2>
+        <p>
+          I'm Hanie Abbaspour, a multidisciplinary designer combining classical elegance with modern aesthetics. My focus is on branding, motion design, and expressive visuals inspired by Classic Art and contemporary storytelling.
+        </p>
+      </div>
+      <img src="images/myphoto.jpg" alt="Hanie Abbaspour" class="about-img" />
+    </div>
+  </section>
+
+  <!-- TIMELINE SECTION -->
+  <!-- TIMELINE SECTION -->
 <section id="timeline" style="background-color: #fdfbf6; padding: 4rem 0 2rem 0; display: flex; flex-direction: column; align-items: center;">
   <div style="display: flex; flex-direction: row; align-items: center; gap: 2rem; flex-wrap: nowrap; overflow-x: auto; padding: 2rem;">
 
@@ -44,3 +211,47 @@
 
   </div>
 </section>
+
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>You can reach me at: <strong>hanieabbaspour22@outlook.com</strong></p>
+    <p>Instagram & Behance: <strong>@motion.mountain</strong></p>
+  </section>
+
+  <footer>
+    © 2025 Hanie Abbaspour | Designed with love & motion
+  </footer>
+
+  <script>
+    const toggleBtn = document.querySelector('.dropdown-toggle');
+    const nav = document.getElementById('mainMenu');
+
+    toggleBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!toggleBtn.contains(e.target) && !nav.contains(e.target)) {
+        nav.classList.remove('active');
+      }
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray(".section").forEach(section => {
+      gsap.from(section, {
+        opacity: 0,
+        y: 100,
+        scale: 0.9,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+  </script>
+</body>
+</html>
