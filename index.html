@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@300;500&display=swap" rel="stylesheet" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hanie Abbaspour | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:wght@500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
   <style>
     html, body {
       margin: 0;
@@ -21,72 +19,15 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       padding: 4rem 2rem;
-      position: relative;
     }
 
     header {
       background: linear-gradient(to right, #f2efe6, #e9e2ce);
       border-bottom: 5px solid #e2e2e2;
       text-align: center;
-    }
-
-    #about {
-      background-color: #fdfbf6;
-    }
-
-    .about-content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      padding: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .about-text {
-      flex: 1;
-      max-width: 600px;
-      font-size: 1.1rem;
-      color: #1C477F;
-    }
-
-    .about-img {
-      width: 700px;
-      height: 700px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    @media (max-width: 768px) {
-      .about-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .about-img {
-        width: 100%;
-        height: auto;
-        max-width: 90vw;
-      }
-    }
-
-    #portfolio {
-      background-color: #f2efe6;
-    }
-
-    #reel {
-      background-color: #1C477F;
-      color: #E9E2CE;
-    }
-
-    #contact {
-      background: radial-gradient(circle at center, #7399BD 0%, #7399BD 10%, #1C477F 30%, #1C477F 75%);
-      color: #E9E2CE;
+      justify-content: center;
     }
 
     footer {
@@ -158,17 +99,103 @@
       text-align: center;
       font-size: 2.5rem;
       font-style: italic;
+      margin-top: 40px;
       margin-bottom: 1.5rem;
       font-family: 'Playfair Display', serif;
-      position: absolute;
-      top: 40px;
-      width: 100%;
-      z-index: 2;
     }
 
-    #about h2, #portfolio h2, #reel h2, #contact h2 {
-      margin-top: 0;
+    #about {
+      background-color: #fdfbf6;
     }
+
+    .about-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 3rem;
+    }
+
+    .about-text {
+      flex: 1;
+      max-width: 600px;
+      font-size: 1.1rem;
+      color: #1C477F;
+    }
+
+    .about-img {
+      flex: 1;
+      width: 700px;
+      height: 700px;
+      object-fit: cover;
+    }
+
+    #portfolio {
+      background-color: #f2efe6;
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .project img {
+      width: 400px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .project-description {
+      max-width: 600px;
+      margin-top: 1rem;
+    }
+
+    #reel {
+      background-color: #1C477F;
+      color: #E9E2CE;
+    }
+
+    .video-placeholder {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-top: 2rem;
+    }
+
+    #contact {
+      background: radial-gradient(circle at center, #7399BD 0%, #7399BD 10%, #1C477F 30%, #1C477F 75%);
+      color: #E9E2CE;
+    }
+
+    #timeline {
+      background-color: #fdfbf6;
+      padding: 4rem 0 2rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .timeline-circle {
+      color: #1C477F;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      padding: 1rem;
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .timeline-arrow {
+      margin: 1rem 0;
+    }
+
   </style>
 </head>
 <body>
@@ -178,9 +205,9 @@
     <div class="dropdown-toggle" onclick="toggleMenu()">▼</div>
     <nav id="mainMenu">
       <a href="#about">Who am i?</a>
-      <a href="#portfolio">My Designs</a>
-      <a href="#reel">My Videos</a>
-      <a href="#contact">Contact me</a>
+      <a href="#portfolio">My designs</a>
+      <a href="#reel">My videos</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -194,9 +221,55 @@
       </div>
       <img src="images/myphoto.jpg" alt="Hanie Abbaspour" class="about-img" />
     </div>
+
+    <!-- TIMELINE SECTION -->
+    <section id="timeline">
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 2rem; flex-wrap: nowrap; overflow-x: auto; padding: 2rem;">
+        <div class="timeline-circle">
+          <h3>2019</h3>
+          <p>Started my career in graphic design, focusing on branding and visual identity.</p>
+        </div>
+        <div class="timeline-arrow">
+          <svg width="80" height="30"><line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/><polygon points="70,10 80,15 70,20" fill="#1C477F"/></svg>
+        </div>
+        <div class="timeline-circle">
+          <h3>2020</h3>
+          <p>Joined a digital marketing agency as a motion designer.</p>
+        </div>
+        <div class="timeline-arrow">
+          <svg width="80" height="30"><line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/><polygon points="70,10 80,15 70,20" fill="#1C477F"/></svg>
+        </div>
+        <div class="timeline-circle">
+          <h3>2021</h3>
+          <p>Launched my own personal brand and began taking freelance clients.</p>
+        </div>
+      </div>
+    </section>
   </section>
 
-  <!-- سایر بخش‌ها (portfolio، reel، contact...) مثل قبل باقی می‌مونن -->
+  <section class="section" id="portfolio">
+    <h2>My designs</h2>
+    <div class="project">
+      <img src="images/bagmockup.png" alt="norooz giftbag by hanieabbaspour">
+      <div class="project-description">
+        <h3>HIRBODAN PAPER BAG "Nowruz Gift Bag"</h3>
+        <p>This project aims to design a product that conveys a sense of authenticity, modernity, and Iranian culture at the same time using Iranian carpet motifs and warm traditional colors.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reel">
+    <h2>My videos</h2>
+    <div class="video-placeholder">
+      My demo reel will appear here soon.<br>Upload to YouTube or Vimeo and embed the link.
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>You can reach me at: <strong>hanieabbaspour22@outlook.com</strong></p>
+    <p>Instagram & Behance: <strong>@motion.mountain</strong></p>
+  </section>
 
   <footer>
     © 2025 Hanie Abbaspour | Designed with love & motion
@@ -217,7 +290,6 @@
     });
 
     gsap.registerPlugin(ScrollTrigger);
-
     gsap.utils.toArray(".section").forEach(section => {
       gsap.from(section, {
         opacity: 0,
