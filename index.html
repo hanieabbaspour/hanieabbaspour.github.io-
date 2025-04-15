@@ -8,52 +8,68 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <style>
+    /* تعریف متغیرهای CSS */
+    :root {
+      --primary-color: #1C477F;
+      --secondary-color: #E9E2CE;
+      --highlight-color: #7399BD;
+      --font-main: 'Inter', sans-serif;
+      --font-heading: 'Dancing Script', cursive;
+      --font-subheading: 'Playfair Display', serif;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Inter', sans-serif;
+      font-family: var(--font-main);
       overflow-x: hidden;
     }
 
+    /* استایل‌های بخش‌ها */
     section, header, footer {
-      min-height: 100vh;
+      min-height: 85vh;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      padding: 2rem 2rem;
+      padding: 1rem 1rem;
     }
 
+    /* استایل header */
     header {
-      background: linear-gradient(to bottom, #f2efe6, #e9e2ce);
+      background: linear-gradient(to bottom, var(--secondary-color), var(--secondary-color) 55%);
       text-align: center;
       justify-content: center;
     }
 
-    footer {
-      background: linear-gradient(to bottom, #1C477F 0%, #E9E2CE 55%, #E9E2CE 100%);
-      text-align: center;
-      padding-top: 2rem;  /* اصلاح ارتفاع برای موبایل */
-      font-size: 0.8rem;
-      color: #1C477F;
-    }
-
     header h1 {
-      font-family: 'Dancing Script', cursive;
+      font-family: var(--font-heading);
       font-size: 4rem;
-      color: #1C477F;
+      color: var(--primary-color);
       margin: 0;
     }
 
     header p {
-      color: #7399BD;
+      color: var(--highlight-color);
       font-style: italic;
       margin-top: 0.45rem;
     }
+    
+      footer {
+    background: linear-gradient(to bottom, #1C477F 0%, #E9E2CE 45%, #E9E2CE 100%);
+    text-align: center;
+    padding-top: 8rem;  /* فاصله از بالای فوتر */
+    font-size: 0.8rem;
+    color: #1C477F;
+  }
+
+  footer p {
+    margin-top: 5rem;  /* کاهش فاصله زیاد برای تعادل بیشتر */
+  }
 
     .dropdown-toggle {
       cursor: pointer;
       font-size: 1.5rem;
-      color: #1C477F;
+      color: var(--primary-color);
       margin-top: 1.5rem;
       transition: transform 0.8s ease;
     }
@@ -62,6 +78,7 @@
       transform: translateY(4px);
     }
 
+    /* منو */
     nav {
       display: none;
       justify-content: center;
@@ -78,7 +95,7 @@
 
     nav a {
       text-decoration: none;
-      color: #1C477F;
+      color: var(--primary-color);
       font-weight: bold;
       font-style: italic;
       position: relative;
@@ -95,25 +112,22 @@
       background-color: #001f3f;
     }
 
+    /* بخش‌ها */
     h2 {
       text-align: center;
       font-size: 2.5rem;
       font-style: italic;
       margin-top: 80px;
       margin-bottom: 1.5rem;
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-subheading);
     }
 
-    #about h2 {
-      color: #1C477F;
-    }
-
-    #portfolio h2 {
-      color: #1C477F;
+    #about h2, #portfolio h2 {
+      color: var(--primary-color);
     }
 
     #about {
-      background-color: #E9E2CE;
+      background-color: var(--secondary-color);
     }
 
     .about-content {
@@ -123,14 +137,14 @@
       gap: 1rem;
       padding: 1rem;
       flex-wrap: wrap;
-      color: #1C477F;
+      color: var(--primary-color);
     }
 
     .about-text {
       flex: 1;
       max-width: 600px;
       font-size: 1.1rem;
-      color: #1C477F;
+      color: var(--primary-color);
     }
 
     .about-img {
@@ -144,7 +158,7 @@
     }
 
     #portfolio {
-      background: linear-gradient(to top, #1C477F 0%, #E9E2CE 55%, #E9E2CE 100%);
+      background: linear-gradient(to top, var(--primary-color), var(--secondary-color) 55%, var(--secondary-color) 100%);
     }
 
     .project {
@@ -155,22 +169,31 @@
       margin-top: 1rem;
     }
 
+    /* استایل‌های پروژه‌ها */
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
     .project img {
       width: 400px;
       height: auto;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .project-description {
       max-width: 600px;
       margin-top: 1rem;
-      color: #1C477F;
+      color: var(--primary-color);
     }
 
+    /* برای ویدئو */
     #reel {
-      background-color: #1C477F;
-      color: #E9E2CE;
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
     }
 
     .video-placeholder {
@@ -180,61 +203,50 @@
     }
 
     #contact {
-      background: radial-gradient(circle at center, #7399BD 0%, #7399BD 10%, #1C477F 30%, #1C477F 75%);
-      color: #E9E2CE;
+      background: radial-gradient(circle at center, var(--highlight-color) 0%, var(--highlight-color) 10%, var(--primary-color) 30%, var(--primary-color) 75%);
+      color: var(--secondary-color);
     }
 
+    /* بخش تایم‌لاین */
     #timeline {
-      background-color: #E9E2CE;
+      background-color: var(--secondary-color);
       padding: 1rem 0 2rem 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: #1C477F;
+      color: var(--primary-color);
     }
 
-    .timeline-arrow {
-      margin: 1rem 0;
-    }
-
-    /* اصلاحات برای موبایل */
+    /* استایل‌های موبایل */
     @media (max-width: 768px) {
       header h1 {
-        font-size: 2.5rem; /* کاهش اندازه برای موبایل */
+        font-size: 2.5rem;
       }
 
       h2 {
-        font-size: 1.8rem; /* کاهش اندازه برای موبایل */
+        font-size: 1.8rem;
       }
 
       .about-content {
-        flex-direction: column; /* تغییر جهت flex برای موبایل */
-        gap: 1rem; /* کاهش فضای خالی */
+        flex-direction: column;
+        gap: 1rem;
       }
 
       .about-img, .project img {
-        max-width: 100%; /* تصاویر به طور کامل تطبیق دهند */
+        max-width: 100%;
         height: auto;
       }
 
       nav a {
-        padding: 1rem 2rem; /* افزایش فضای دکمه‌ها */
+        padding: 1rem 2rem;
       }
 
       #timeline {
-        flex-direction: column; /* تبدیل تایم‌لاین به عمودی */
+        flex-direction: column;
         padding: 1rem;
       }
-
-      .timeline-arrow {
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-      }
-
-      footer {
-        padding-top: 2rem; /* کاهش padding برای موبایل */
-      }
-    }
+}
+    
   </style>
 </head>
 <body>
@@ -260,30 +272,6 @@
       </div>
       <img src="images/mi-foto-0.png" alt="Hanie Abbaspour" class="about-img" />
     </div>
-
-    <!-- TIMELINE SECTION -->
-    <section id="timeline">
-      <div style="display: flex; flex-direction: row; align-items: center; gap: 2rem; flex-wrap: nowrap; overflow-x: auto; padding: 2rem;">
-        <div class="timeline-circle">
-          <h3>2019</h3>
-          <p>Started my career in graphic design, focusing on branding and visual identity.</p>
-        </div>
-        <div class="timeline-arrow">
-          <svg width="80" height="30"><line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/><polygon points="70,10 80,15 70,20" fill="#1C477F"/></svg>
-        </div>
-        <div class="timeline-circle">
-          <h3>2020</h3>
-          <p>Joined a digital marketing agency as a motion designer.</p>
-        </div>
-        <div class="timeline-arrow">
-          <svg width="80" height="30"><line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/><polygon points="70,10 80,15 70,20" fill="#1C477F"/></svg>
-        </div>
-        <div class="timeline-circle">
-          <h3>2021</h3>
-          <p>Launched my own personal brand and began taking freelance clients.</p>
-        </div>
-      </div>
-    </section>
   </section>
 
   <section id="portfolio">
@@ -291,8 +279,16 @@
     <div class="project">
       <img src="images/bagmockup.png" alt="norooz giftbag by hanieabbaspour">
       <div class="project-description">
-        <h3>HIRBODAN PAPER BAG "Nowruz Gift Bag"</h3>
-        <p>This project aims to design a product that conveys a sense of authenticity, modernity, and Iranian culture at the same time using Iranian carpet motifs and warm traditional colors.</p>
+        <h3 class="project-title">HIRBODAN PAPER BAG "Nowruz Gift Bag"</h3>
+        <p>This project aims to design a product that conveys a sense of authenticity, modernity, and Iranian culture...</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="images/another-project.png" alt="another project image">
+      <div class="project-description">
+        <h3 class="project-title">Creative Motion Project</h3>
+        <p>This project combines traditional design principles with modern motion graphics techniques...</p>
       </div>
     </div>
   </section>
@@ -311,7 +307,7 @@
   </section>
 
   <footer>
-    © 2025 Hanie Abbaspour | Designed with love & motion
+    <p>© 2025 Hanie Abbaspour | Designed with love & motion</p>
   </footer>
 
   <script>
