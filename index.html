@@ -280,15 +280,61 @@
 
     /* برای ویدئو */
     #reel {
-      background-color: var(--primary-color);
+       padding: 2rem;
+       background-color: var(--primary-color);
       color: var(--secondary-color);
     }
 
-    .video-placeholder {
-      text-align: center;
-      font-size: 1.1rem;
-      margin-top: 2rem;
-    }
+    #reel h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* گالری ویدیو: استفاده از Grid برای نمایش کنار هم */
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* استایل برای هر ویدیو */
+.video-item {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+  transform: scale(1.02);
+}
+
+/* Thumbnail ویدیو */
+.video-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* توضیحات ویدیو */
+.video-description {
+  padding: 1rem;
+  text-align: left;
+}
+
+.video-description h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.video-description p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
 
     #contact {
       background: radial-gradient(circle at center, var(--highlight-color) 0%, var(--highlight-color) 10%, var(--primary-color) 30%, var(--primary-color) 75%);
@@ -434,13 +480,46 @@
 
   <section id="reel">
     <h2>My videos</h2>
-    <div class="video-placeholder">
-      My demo reel will appear here soon.<br>Upload to YouTube or Vimeo and embed the link.
+    <div class="video-gallery">
+    <!-- Video 1 -->
+    <div class="video-item">
+      <a href="video1.html" target="_blank">
+        <img src="images/thumbnail1.jpg" alt="Video 1 Thumbnail">
+      </a>
+      <div class="video-description">
+        <h3>Video Title 1</h3>
+        <p>This is a brief description of Video 1.</p>
+      </div>
     </div>
+
+    <!-- Video 2 -->
+    <div class="video-item">
+      <a href="video2.html" target="_blank">
+        <img src="images/thumbnail2.jpg" alt="Video 2 Thumbnail">
+      </a>
+      <div class="video-description">
+        <h3>Video Title 2</h3>
+        <p>This is a brief description of Video 2.</p>
+      </div>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="video-item">
+      <a href="video3.html" target="_blank">
+        <img src="images/thumbnail3.jpg" alt="Video 3 Thumbnail">
+      </a>
+      <div class="video-description">
+        <h3>Video Title 3</h3>
+        <p>This is a brief description of Video 3.</p>
+      </div>
+    </div>
+
+    <!-- شما می‌توانید ویدیوهای بیشتری اضافه کنید -->
+  </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
+    <h2>Contact Me!</h2>
     <p>You can reach me at: <strong>hanieabbaspour22@outlook.com</strong></p>
     <p>Instagram & Behance: <strong>@motion.mountain</strong></p>
   </section>
