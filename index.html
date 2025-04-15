@@ -54,17 +54,17 @@
       margin-top: 0.45rem;
     }
     
-    footer {
-      background: linear-gradient(to bottom, #1C477F 0%, #E9E2CE 45%, #E9E2CE 100%);
-      text-align: center;
-      padding-top: 8rem;  /* فاصله از بالای فوتر */
-      font-size: 0.8rem;
-      color: #1C477F;
-    }
+      footer {
+    background: linear-gradient(to bottom, #1C477F 0%, #E9E2CE 45%, #E9E2CE 100%);
+    text-align: center;
+    padding-top: 8rem;  /* فاصله از بالای فوتر */
+    font-size: 0.8rem;
+    color: #1C477F;
+  }
 
-    footer p {
-      margin-top: 5rem;  /* کاهش فاصله زیاد برای تعادل بیشتر */
-    }
+  footer p {
+    margin-top: 5rem;  /* کاهش فاصله زیاد برای تعادل بیشتر */
+  }
 
     .dropdown-toggle {
       cursor: pointer;
@@ -195,99 +195,54 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .project-img-wrapper {
-      position: relative;
-      display: inline-block;
-      overflow: hidden;
-    }
-
-    .project-img-wrapper img {
-      display: block;
-      width: 100%;
-      height: auto;
-      transition: transform 0.5s ease;
-    }
-
-    .project-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(28, 71, 127, 0.8); /* هم‌رنگ با تم پروژه‌ات */
-      color: #fff;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    .project-img-wrapper:hover .project-overlay {
-      opacity: 1;
-    }
-
-    .project-img-wrapper:hover img {
-      transform: scale(1.05);
-    }
-
-    /* حذف چرخش از اسلایدها */
-    .project-img-wrapper img:nth-child(2),
-    .project-img-wrapper img:nth-child(3) {
-      transform: none;  /* چرخش را حذف کردیم */
-      transition: transform 0.5s ease;  /* برگشت به حالت معمول */
-    }
-
-   /* استایل‌های اسلایدر */
-.slider {
-  display: flex;
-  transition: transform 0.5s ease;
-  position: relative;
-  width: auto; /* تنظیم عرض به اندازه تصاویر */
-}
-
-.slider .slide {
-  display: inline-block;
-  width: auto; /* عرض اسلاید را به اندازه واقعی تصویر تنظیم می‌کنیم */
-  height: auto; /* ارتفاع را به اندازه واقعی تصویر تنظیم می‌کنیم */
-}
-
 .project-img-wrapper img {
-  width: 600px; /* عرض دلخواه برای تصاویر */
-  height: auto; /* حفظ تناسب تصاویر */
-  object-fit: contain; /* به طوری که تصاویر تناسب خود را حفظ کنند */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* سایه برای زیبایی بیشتر */
-  border-radius: 8px; /* لبه‌های گرد برای تصاویر */
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.project-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(28, 71, 127, 0.8); /* هم‌رنگ با تم پروژه‌ات */
-  color: #fff;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  text-align: center;
-}
+
+
 
 .project-img-wrapper:hover .project-overlay {
   opacity: 1;
 }
 
 .project-img-wrapper:hover img {
-  transform: scale(1.05); /* وقتی تصویر در حالت hover است کمی بزرگتر شود */
+  transform: scale(1.05);
 }
+.project-img-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 700px;  /* عرض مشخص اسلایدر */
+  height: auto;
+}
+
+.slider {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.slide {
+  display: none;
+  min-width: 100%;
+  position: relative;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+
 
 .slider-controls {
   position: absolute;
@@ -312,6 +267,16 @@
   opacity: 1;
 }
 
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+
     /* برای ویدئو */
     #reel {
       background-color: var(--primary-color);
@@ -328,6 +293,7 @@
       background: radial-gradient(circle at center, var(--highlight-color) 0%, var(--highlight-color) 10%, var(--primary-color) 30%, var(--primary-color) 75%);
       color: var(--secondary-color);
     }
+
 
     /* استایل‌های موبایل */
     @media (max-width: 768px) {
@@ -357,7 +323,7 @@
         flex-direction: column;
         padding: 1rem;
       }
-    }
+}
     
   </style>
 </head>
@@ -385,7 +351,7 @@
       <img src="images/mi-foto-0.png" alt="Hanie Abbaspour" class="about-img" />
     </div>
  
-    <!-- TIMELINE SECTION -->
+     <!-- TIMELINE SECTION -->
     <section id="timeline">
       <div style="display: flex; flex-direction: row; align-items: center; gap: 2rem; flex-wrap: nowrap; overflow-x: auto; padding: 2rem;">
         <div class="timeline-circle">
@@ -412,39 +378,57 @@
 
   <section id="portfolio">
     <h2>My designs</h2>
-   <div class="project">
+    <div class="project">
     <h3 class="project-title">"Nowruz Gift Bag"</h3>
-    <div class="project-img-wrapper">
+   <div class="project-img-wrapper">
       <img src="images/bagmockup.png" alt="norooz giftbag by hanieabbaspour">
-      <div class="project-overlay">
+        <div class="project-overlay">
         <p>This project aims to design a product that conveys a sense of authenticity, modernity, and Iranian culture...</p>
       </div>
     </div>
+
+ <div class="project">
+  <h3 class="project-title">"Hirbodan Buisness Card"</h3>
+  <div class="project-img-wrapper">
+    <div class="slider">
+      <!-- Slide 1 -->
+      <div class="slide active"> <!-- کلاس active برای اسلاید فعال -->
+        <img src="images/buisness-card-mockup.png" alt="business card 1" />
+        <div class="overlay">
+          <h3>Hirbodan</h3>
+          <p>Project 1 description</p>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide">
+        <img src="images/FRONT-bc.png" alt="business card 2" />
+        <div class="overlay">
+          <h3>Hirbodan</h3>
+          <p>Project 2 description</p>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide">
+        <img src="images/BACK-bc.png" alt="business card 3" />
+        <div class="overlay">
+          <h3>Hirbodan</h3>
+          <p>Project 3 description</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- کنترل‌های قبلی/بعدی -->
+    <div class="slider-controls">
+      <button class="prev-btn">←</button>
+      <button class="next-btn">→</button>
+    </div>
   </div>
 
-      <div class="project">
-    <h3 class="project-title">"Hirbodan Business Card"</h3>
-    <div class="project-img-wrapper">
-      <div class="slider">
-        <div class="slide">
-          <img src="images/buisness-card-mockup.png" alt="business card image">
-        </div>
-        <div class="slide">
-          <img src="images/FRONT-bc.png" alt="business card 2">
-        </div>
-        <div class="slide">
-          <img src="images/BACK-bc.png" alt="business card 3">
-        </div>
-      </div>
-      <div class="slider-controls">
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
-      </div>
-    </div>
-    <div class="project-overlay">
-      <p>This project combines traditional design principles with modern motion graphics techniques...</p>
-    </div>
+  <div class="project-overlay">
+    <p>This project combines traditional design principles with modern motion graphics techniques...</p>
   </div>
+</div>
+
   </section>
 
   <section id="reel">
@@ -464,23 +448,63 @@
     <p>© 2025 Hanie Abbaspour | Designed with love & motion</p>
   </footer>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mainMenu');
-      menu.classList.toggle('active');
+ 
+ <script>
+// انتخاب دکمه‌ها و تصاویر
+const nextButton = document.querySelector('.next-btn');
+const prevButton = document.querySelector('.prev-btn');
+const slides = document.querySelectorAll('.slide');  // تمام اسلایدها را انتخاب می‌کنیم
+let currentIndex = 0;  // اندیس اسلاید فعال
+
+// تابع برای تغییر به اسلاید بعدی
+function goToNextSlide() {
+  slides[currentIndex].classList.remove('active');  // کلاس active از اسلاید جاری حذف می‌شود
+  currentIndex = (currentIndex + 1) % slides.length;  // اندیس اسلاید بعدی
+  slides[currentIndex].classList.add('active');  // کلاس active به اسلاید بعدی اضافه می‌شود
+}
+
+// تابع برای تغییر به اسلاید قبلی
+function goToPrevSlide() {
+  slides[currentIndex].classList.remove('active');  // کلاس active از اسلاید جاری حذف می‌شود
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;  // اندیس اسلاید قبلی
+  slides[currentIndex].classList.add('active');  // کلاس active به اسلاید قبلی اضافه می‌شود
+}
+
+// افزودن رویداد کلیک برای دکمه‌ها
+nextButton.addEventListener('click', goToNextSlide);
+prevButton.addEventListener('click', goToPrevSlide);
+
+// منو
+const toggleBtn = document.querySelector('.dropdown-toggle');
+const nav = document.getElementById('mainMenu');
+
+toggleBtn.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+
+document.addEventListener('click', (e) => {
+  if (!toggleBtn.contains(e.target) && !nav.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
+
+// GSAP - انیمیشن اسکرول
+gsap.registerPlugin(ScrollTrigger);
+gsap.utils.toArray(".section").forEach(section => {
+  gsap.from(section, {
+    opacity: 0,
+    y: 100,
+    scale: 0.9,
+    duration: 1.5,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: section,
+      start: "top 80%",
+      toggleActions: "play none none none"
     }
+  });
+});
+</script>
 
-    let currentIndex = 0;
-
-    function moveSlide(direction) {
-      const slides = document.querySelectorAll(".project-img-wrapper .slide");
-      const totalSlides = slides.length;
-
-      currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
-
-      const slider = document.querySelector('.slider');
-      slider.style.transform = `translateX(-${100 * currentIndex}%)`;
-    }
-  </script>
 </body>
 </html>
