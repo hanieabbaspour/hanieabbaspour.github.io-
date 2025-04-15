@@ -156,6 +156,16 @@
       border-radius: 0;
       box-shadow: none;
     }
+    
+     /* بخش تایم‌لاین */
+    #timeline {
+      background-color: var(--secondary-color);
+      padding: 1rem 0 2rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--primary-color);
+    }
 
     #portfolio {
       background: linear-gradient(to top, var(--primary-color), var(--secondary-color) 55%, var(--secondary-color) 100%);
@@ -207,15 +217,6 @@
       color: var(--secondary-color);
     }
 
-    /* بخش تایم‌لاین */
-    #timeline {
-      background-color: var(--secondary-color);
-      padding: 1rem 0 2rem 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: var(--primary-color);
-    }
 
     /* استایل‌های موبایل */
     @media (max-width: 768px) {
@@ -272,6 +273,30 @@
       </div>
       <img src="images/mi-foto-0.png" alt="Hanie Abbaspour" class="about-img" />
     </div>
+ 
+     <!-- TIMELINE SECTION -->
+    <section id="timeline">
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 2rem; flex-wrap: nowrap; overflow-x: auto; padding: 2rem;">
+        <div class="timeline-circle">
+          <h3>2019</h3>
+          <p>Started my career in graphic design, focusing on branding and visual identity.</p>
+        </div>
+        <div class="timeline-arrow">
+          <svg width="80" height="30"><line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/><polygon points="70,10 80,15 70,20" fill="#1C477F"/></svg>
+        </div>
+        <div class="timeline-circle">
+          <h3>2020</h3>
+          <p>Joined a digital marketing agency as a motion designer.</p>
+        </div>
+        <div class="timeline-arrow">
+          <svg width="80" height="30"><line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/><polygon points="70,10 80,15 70,20" fill="#1C477F"/></svg>
+        </div>
+        <div class="timeline-circle">
+          <h3>2021</h3>
+          <p>Launched my own personal brand and began taking freelance clients.</p>
+        </div>
+      </div>
+    </section>
   </section>
 
   <section id="portfolio">
