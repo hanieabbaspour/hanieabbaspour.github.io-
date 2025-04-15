@@ -234,11 +234,11 @@
       transform: scale(1.05);
     }
 
-    /* فقط اسلاید دوم و سوم دائماً بچرخند */
+    /* حذف چرخش از اسلایدها */
     .project-img-wrapper img:nth-child(2),
     .project-img-wrapper img:nth-child(3) {
-      transform: rotate(90deg);  /* چرخش دائمی 90 درجه */
-      transition: none;  /* غیرفعال کردن انتقال برای چرخش */
+      transform: none;  /* چرخش را حذف کردیم */
+      transition: transform 0.5s ease;  /* برگشت به حالت معمول */
     }
 
     .slider {
