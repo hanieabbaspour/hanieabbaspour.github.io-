@@ -54,17 +54,17 @@
       margin-top: 0.45rem;
     }
     
-      footer {
-    background: linear-gradient(to bottom, #1C477F 0%, #E9E2CE 45%, #E9E2CE 100%);
-    text-align: center;
-    padding-top: 8rem;  /* فاصله از بالای فوتر */
-    font-size: 0.8rem;
-    color: #1C477F;
-  }
+    footer {
+      background: linear-gradient(to bottom, #1C477F 0%, #E9E2CE 45%, #E9E2CE 100%);
+      text-align: center;
+      padding-top: 8rem;  /* فاصله از بالای فوتر */
+      font-size: 0.8rem;
+      color: #1C477F;
+    }
 
-  footer p {
-    margin-top: 5rem;  /* کاهش فاصله زیاد برای تعادل بیشتر */
-  }
+    footer p {
+      margin-top: 5rem;  /* کاهش فاصله زیاد برای تعادل بیشتر */
+    }
 
     .dropdown-toggle {
       cursor: pointer;
@@ -195,101 +195,91 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-.project-img-wrapper {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-}
+    .project-img-wrapper {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
 
-.project-img-wrapper img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: transform 0.5s ease;
-}
+    .project-img-wrapper img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s ease;
+    }
 
-.project-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(28, 71, 127, 0.8); /* هم‌رنگ با تم پروژه‌ات */
-  color: #fff;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  text-align: center;
-}
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(28, 71, 127, 0.8); /* هم‌رنگ با تم پروژه‌ات */
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      text-align: center;
+    }
 
-.project-img-wrapper:hover .project-overlay {
-  opacity: 1;
-}
+    .project-img-wrapper:hover .project-overlay {
+      opacity: 1;
+    }
 
-.project-img-wrapper:hover img {
-  transform: scale(1.05);
-}
-.project-img-wrapper {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  width: 400px;  /* عرض مشخص اسلایدر */
-  height: auto;
-}
+    .project-img-wrapper:hover img {
+      transform: scale(1.05);
+    }
 
-.slider {
-  display: flex;
-  transition: transform 0.5s ease;
-}
+    /* فقط اسلاید دوم و سوم دائماً بچرخند */
+    .project-img-wrapper img:nth-child(2),
+    .project-img-wrapper img:nth-child(3) {
+      transform: rotate(90deg);  /* چرخش دائمی 90 درجه */
+      transition: none;  /* غیرفعال کردن انتقال برای چرخش */
+    }
 
-.slide {
-  min-width: 100%;
-  height: auto;
-}
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease;
+      position: relative;  /* اضافه کردن position */
+    }
 
-.project-img-wrapper img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
+    .project-img-wrapper img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
 
-.slider-controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-}
+    .slide {
+      min-width: 100%;
+      height: auto;
+    }
 
-.slider-controls button {
-  background-color: rgba(28, 71, 127, 0.8);
-  color: #fff;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 1rem;
-  opacity: 0.7;
-}
+    .slider-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
 
-.slider-controls button:hover {
-  opacity: 1;
-}
+    .slider-controls button {
+      background-color: rgba(28, 71, 127, 0.8);
+      color: #fff;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 1rem;
+      opacity: 0.7;
+    }
 
-    /* برای چرخش 90 درجه تصاویر */
-.project-img-wrapper img:nth-child(3) {
-  transform: rotate(90deg);
-}
-
-.project-img-wrapper img:nth-child(2) {
-  transform: rotate(90deg);
-}
-
-
+    .slider-controls button:hover {
+      opacity: 1;
+    }
 
     /* برای ویدئو */
     #reel {
@@ -307,7 +297,6 @@
       background: radial-gradient(circle at center, var(--highlight-color) 0%, var(--highlight-color) 10%, var(--primary-color) 30%, var(--primary-color) 75%);
       color: var(--secondary-color);
     }
-
 
     /* استایل‌های موبایل */
     @media (max-width: 768px) {
@@ -337,7 +326,7 @@
         flex-direction: column;
         padding: 1rem;
       }
-}
+    }
     
   </style>
 </head>
@@ -365,7 +354,7 @@
       <img src="images/mi-foto-0.png" alt="Hanie Abbaspour" class="about-img" />
     </div>
  
-     <!-- TIMELINE SECTION -->
+    <!-- TIMELINE SECTION -->
     <section id="timeline">
       <div style="display: flex; flex-direction: row; align-items: center; gap: 2rem; flex-wrap: nowrap; overflow-x: auto; padding: 2rem;">
         <div class="timeline-circle">
@@ -393,38 +382,38 @@
   <section id="portfolio">
     <h2>My designs</h2>
     <div class="project">
-    <h3 class="project-title">"Nowruz Gift Bag"</h3>
-   <div class="project-img-wrapper">
-      <img src="images/bagmockup.png" alt="norooz giftbag by hanieabbaspour">
+      <h3 class="project-title">"Nowruz Gift Bag"</h3>
+      <div class="project-img-wrapper">
+        <img src="images/bagmockup.png" alt="norooz giftbag by hanieabbaspour">
         <div class="project-overlay">
-        <p>This project aims to design a product that conveys a sense of authenticity, modernity, and Iranian culture...</p>
+          <p>This project aims to design a product that conveys a sense of authenticity, modernity, and Iranian culture...</p>
+        </div>
       </div>
-    </div>
 
-    <div class="project">
-  <h3 class="project-title">"Hirbodan Buisness Card"</h3>
-  <div class="project-img-wrapper">
-    <div class="slider">
-      <div class="slide">
-        <img src="images/buisness-card-mockup.png" alt="business card image">
-      </div>
-      <div class="slide">
-        <img src="images/FRONT-bc.png" alt="business card 2">
-      </div>
-      <div class="slide">
-        <img src="images/BACK-bc.png" alt="business card 3">
+      <div class="project">
+        <h3 class="project-title">"Hirbodan Buisness Card"</h3>
+        <div class="project-img-wrapper">
+          <div class="slider">
+            <div class="slide">
+              <img src="images/buisness-card-mockup.png" alt="business card image">
+            </div>
+            <div class="slide">
+              <img src="images/FRONT-bc.png" alt="business card 2">
+            </div>
+            <div class="slide">
+              <img src="images/BACK-bc.png" alt="business card 3">
+            </div>
+          </div>
+          <div class="slider-controls">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+          </div>
+        </div>
+        <div class="project-overlay">
+          <p>This project combines traditional design principles with modern motion graphics techniques...</p>
+        </div>
       </div>
     </div>
-    <div class="slider-controls">
-      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-      <button class="next" onclick="moveSlide(1)">&#10095;</button>
-    </div>
-  </div>
-  <div class="project-overlay">
-    <p>This project combines traditional design principles with modern motion graphics techniques...</p>
-  </div>
-</div>
-
   </section>
 
   <section id="reel">
@@ -445,53 +434,22 @@
   </footer>
 
   <script>
-    const toggleBtn = document.querySelector('.dropdown-toggle');
-    const nav = document.getElementById('mainMenu');
+    function toggleMenu() {
+      const menu = document.getElementById('mainMenu');
+      menu.classList.toggle('active');
+    }
 
-    toggleBtn.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
+    let currentIndex = 0;
 
-    document.addEventListener('click', (e) => {
-      if (!toggleBtn.contains(e.target) && !nav.contains(e.target)) {
-        nav.classList.remove('active');
-      }
-    });
+    function moveSlide(direction) {
+      const slides = document.querySelectorAll(".project-img-wrapper .slide");
+      const totalSlides = slides.length;
 
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray(".section").forEach(section => {
-      gsap.from(section, {
-        opacity: 0,
-        y: 100,
-        scale: 0.9,
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%",
-          toggleActions: "play none none none"
-        }
-      });
-    });
+      currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+
+      const slider = document.querySelector('.slider');
+      slider.style.transform = `translateX(-${100 * currentIndex}%)`;
+    }
   </script>
-  let currentSlideIndex = 0;
-
-function moveSlide(direction) {
-  const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length;
-
-  currentSlideIndex += direction;
-
-  if (currentSlideIndex < 0) {
-    currentSlideIndex = totalSlides - 1;  // اگر به اول برگشتیم
-  } else if (currentSlideIndex >= totalSlides) {
-    currentSlideIndex = 0;  // اگر به آخر رسیدیم
-  }
-
-  const slider = document.querySelector('.slider');
-  const slideWidth = slides[0].clientWidth;  // عرض هر اسلاید
-  slider.style.transform = `translateX(-${currentSlideIndex * slideWidth}px)`;  // تغییر موقعیت اسلاید
-}
-
 </body>
 </html>
