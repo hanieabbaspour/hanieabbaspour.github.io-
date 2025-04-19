@@ -244,6 +244,11 @@
   display: block;
 }
 
+.slide img {
+  height: auto;
+  max-width: 100%;
+}
+
 
 .slider-controls {
   position: absolute;
@@ -369,7 +374,13 @@
       #timeline {
         flex-direction: column;
         padding: 1rem;
+         width: 100%;
       }
+      
+      .project-img-wrapper {
+  width: 100%;
+}
+
 }
     
   </style>
@@ -473,6 +484,80 @@
 
   <div class="project-overlay">
     <p>This project combines traditional design principles with modern motion graphics techniques...</p>
+  </div>
+</div>
+
+<div class="project">
+  <h3 class="project-title">"Design Notebooks"</h3>
+  <div class="project-img-wrapper">
+    <div class="slider">
+      <!-- Slide 1 -->
+      <div class="slide active">
+        <img src="images/your-mockup-1.png" alt="notebook mockup 1" />
+        <div class="overlay">
+          <h3>Notebook</h3>
+          <p>Mockup 1</p>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide">
+        <img src="images/your-mockup-2.png" alt="notebook mockup 2" />
+        <div class="overlay">
+          <h3>Notebook</h3>
+          <p>Mockup 2</p>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide">
+        <img src="images/your-mockup-3.png" alt="notebook mockup 3" />
+        <div class="overlay">
+          <h3>Notebook</h3>
+          <p>Mockup 3</p>
+        </div>
+      </div>
+      <!-- Slide 4 -->
+      <div class="slide">
+        <img src="images/your-mockup-4.png" alt="notebook mockup 4" />
+        <div class="overlay">
+          <h3>Notebook</h3>
+          <p>Mockup 4</p>
+        </div>
+      </div>
+      <!-- Slide 5 -->
+      <div class="slide">
+        <img src="images/your-mockup-5.png" alt="notebook mockup 5" />
+        <div class="overlay">
+          <h3>Notebook</h3>
+          <p>Mockup 5</p>
+        </div>
+      </div>
+      <!-- Slide 6 -->
+      <div class="slide">
+        <img src="images/your-mockup-6.png" alt="notebook mockup 6" />
+        <div class="overlay">
+          <h3>Notebook</h3>
+          <p>Mockup 6</p>
+        </div>
+      </div>
+      <!-- Slide 7 -->
+      <div class="slide">
+        <img src="images/your-mockup-7.png" alt="notebook mockup 7" />
+        <div class="overlay">
+          <h3>Notebook</h3>
+          <p>Mockup 7</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- کنترل‌ها -->
+    <div class="slider-controls">
+      <button class="prev-btn">←</button>
+      <button class="next-btn">→</button>
+    </div>
+  </div>
+
+  <div class="project-overlay">
+    <p>This project showcases the design and layout of two different notebooks, created with attention to aesthetic detail and functionality.</p>
   </div>
 </div>
 
