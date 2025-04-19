@@ -614,59 +614,26 @@
   </footer>
 
  
- <script>
-// انتخاب دکمه‌ها و تصاویر
-const nextButton = document.querySelector('.next-btn');
-const prevButton = document.querySelector('.prev-btn');
-const slides = document.querySelectorAll('.slide');  // تمام اسلایدها را انتخاب می‌کنیم
-let currentIndex = 0;  // اندیس اسلاید فعال
+<script>
+document.querySelectorAll('.slider').forEach((slider, index) => {
+  const slides = slider.querySelectorAll('.slide');
+  const nextBtn = slider.parentElement.querySelector('.next-btn');
+  const prevBtn = slider.parentElement.querySelector('.prev-btn');
+  let currentIndex = 0;
 
-// تابع برای تغییر به اسلاید بعدی
-function goToNextSlide() {
-  slides[currentIndex].classList.remove('active');  // کلاس active از اسلاید جاری حذف می‌شود
-  currentIndex = (currentIndex + 1) % slides.length;  // اندیس اسلاید بعدی
-  slides[currentIndex].classList.add('active');  // کلاس active به اسلاید بعدی اضافه می‌شود
-}
-
-// تابع برای تغییر به اسلاید قبلی
-function goToPrevSlide() {
-  slides[currentIndex].classList.remove('active');  // کلاس active از اسلاید جاری حذف می‌شود
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;  // اندیس اسلاید قبلی
-  slides[currentIndex].classList.add('active');  // کلاس active به اسلاید قبلی اضافه می‌شود
-}
-
-// افزودن رویداد کلیک برای دکمه‌ها
-nextButton.addEventListener('click', goToNextSlide);
-prevButton.addEventListener('click', goToPrevSlide);
-
-// منو
-const toggleBtn = document.querySelector('.dropdown-toggle');
-const nav = document.getElementById('mainMenu');
-
-toggleBtn.addEventListener('click', () => {
-  nav.classList.toggle('active');
-});
-
-document.addEventListener('click', (e) => {
-  if (!toggleBtn.contains(e.target) && !nav.contains(e.target)) {
-    nav.classList.remove('active');
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
   }
-});
 
-// GSAP - انیمیشن اسکرول
-gsap.registerPlugin(ScrollTrigger);
-gsap.utils.toArray(".section").forEach(section => {
-  gsap.from(section, {
-    opacity: 0,
-    y: 100,
-    scale: 0.9,
-    duration: 1.5,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: section,
-      start: "top 80%",
-      toggleActions: "play none none none"
-    }
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
   });
 });
 </script>
