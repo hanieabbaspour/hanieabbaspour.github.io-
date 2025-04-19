@@ -377,6 +377,53 @@
          width: 100%;
       }
       
+      #timeline {
+  padding: 1rem;
+  width: 100%;
+}
+
+#timeline .timeline-circle {
+  min-width: 200px;
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 100%;
+  text-align: center;
+}
+
+#timeline .timeline-arrow {
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#timeline .timeline-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 2rem;
+}
+
+/* 📱 حالت موبایل */
+@media screen and (max-width: 768px) {
+  #timeline .timeline-container {
+    flex-direction: column;
+    overflow-x: hidden;
+    gap: 1.5rem;
+  }
+
+  #timeline .timeline-arrow {
+    transform: rotate(90deg);
+  }
+
+  #timeline .timeline-circle {
+    border-radius: 20px; /* بیضی بشه برای حالت عمودی */
+  }
+}
+
       .project-img-wrapper {
   width: 100%;
 }
@@ -410,28 +457,35 @@
     </div>
  
      <!-- TIMELINE SECTION -->
-    <section id="timeline">
-      <div style="display: flex; flex-direction: row; align-items: center; gap: 2rem; flex-wrap: nowrap; overflow-x: auto; padding: 2rem;">
-        <div class="timeline-circle">
-          <h3>2019</h3>
-          <p>Started my career in graphic design, focusing on branding and visual identity.</p>
-        </div>
-        <div class="timeline-arrow">
-          <svg width="80" height="30"><line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/><polygon points="70,10 80,15 70,20" fill="#1C477F"/></svg>
-        </div>
-        <div class="timeline-circle">
-          <h3>2020</h3>
-          <p>Joined a digital marketing agency as a motion designer.</p>
-        </div>
-        <div class="timeline-arrow">
-          <svg width="80" height="30"><line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/><polygon points="70,10 80,15 70,20" fill="#1C477F"/></svg>
-        </div>
-        <div class="timeline-circle">
-          <h3>2021</h3>
-          <p>Launched my own personal brand and began taking freelance clients.</p>
-        </div>
-      </div>
-    </section>
+   <section id="timeline">
+  <div class="timeline-container">
+    <div class="timeline-circle">
+      <h3>2019</h3>
+      <p>Started my career in graphic design, focusing on branding and visual identity.</p>
+    </div>
+    <div class="timeline-arrow">
+      <svg width="80" height="30">
+        <line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/>
+        <polygon points="70,10 80,15 70,20" fill="#1C477F"/>
+      </svg>
+    </div>
+    <div class="timeline-circle">
+      <h3>2020</h3>
+      <p>Joined a digital marketing agency as a motion designer.</p>
+    </div>
+    <div class="timeline-arrow">
+      <svg width="80" height="30">
+        <line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/>
+        <polygon points="70,10 80,15 70,20" fill="#1C477F"/>
+      </svg>
+    </div>
+    <div class="timeline-circle">
+      <h3>2021</h3>
+      <p>Launched my own personal brand and began taking freelance clients.</p>
+    </div>
+  </div>
+</section>
+
   </section>
 
   <section id="portfolio">
