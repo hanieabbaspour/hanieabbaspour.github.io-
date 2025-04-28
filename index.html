@@ -375,6 +375,18 @@
   font-size: 1rem;
   color: var(--primary-color);
 }
+.video-item video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.video-item:hover video {
+  transform: scale(1.02);
+}
+
 
     #contact {
       background: radial-gradient(circle at center, var(--highlight-color) 0%, var(--highlight-color) 10%, var(--primary-color) 45%, var(--primary-color) 75%);
@@ -914,6 +926,15 @@ const toggles = document.querySelectorAll(".contact-toggle");
       item.classList.toggle("active");
     });
   });
+  document.querySelectorAll('.video-item video').forEach(video => {
+  video.addEventListener('mouseover', () => {
+    video.play();
+  });
+  video.addEventListener('mouseout', () => {
+    video.pause();
+    video.currentTime = 0; // برگرده اول ویدیو
+  });
+});
   
 </script>
 
