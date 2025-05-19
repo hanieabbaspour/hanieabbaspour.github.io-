@@ -333,7 +333,7 @@
 /* گالری ویدیو: استفاده از Grid برای نمایش کنار هم */
 .video-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1.5rem;
   padding: 1rem;
 }
@@ -836,6 +836,16 @@ And guess what? My manager loved the result so much that there wasn’t even a s
   </div>
 </div>
 
+
+<div class="video-item">
+  <a href="videos/hanieabbaspour.mp4" target="_blank">
+    <video src="videos/hanieabbaspour.mp4" muted preload="none" poster="images/thumbnail1.jpg"></video>
+  </a>
+  <div class="video-description">
+    <h3>Nowrooz roadtrip with hirbodan</h3>
+    <p>"travelling around the iran"</p>
+  </div>
+</div>
     <!-- شما می‌توانید ویدیوهای بیشتری اضافه کنید -->
   </div>
   </section>
@@ -945,7 +955,12 @@ const toggles = document.querySelectorAll(".contact-toggle");
     video.currentTime = 0; // برگرده اول ویدیو
   });
 });
-  
+  function toggleMenu() {
+    const menu = document.getElementById('mainMenu');
+    menu.classList.toggle('active');
+  }
+
+
 </script>
 
 </body>
