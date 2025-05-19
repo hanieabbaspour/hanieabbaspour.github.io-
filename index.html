@@ -56,32 +56,32 @@
     header h1 {
       font-family: var(--font-heading);
       font-size: 4rem;
-      color: var(--primary-color);
+      color: #6A453B;
       margin: 0;
     }
 
     header p {
-      color: var(--highlight-color);
+      color: #6A453B;
       font-style: italic;
       margin-top: 0.45rem;
     }
     
       footer {
-    background: linear-gradient(to bottom, #1C477F 0%, #E9E2CE 45%, #E9E2CE 100%);
+    background: linear-gradient(to bottom, #6A453B 0%, #E9E2CE 45%, #E9E2CE 100%);
     text-align: center;
-    padding-top: 8rem;  /* فاصله از بالای فوتر */
+    padding-top: 38rem;  /* فاصله از بالای فوتر */
     font-size: 0.8rem;
-    color: #1C477F;
+    color: #CEAA7A;
   }
 
   footer p {
-    margin-top: 5rem;  /* کاهش فاصله زیاد برای تعادل بیشتر */
+    margin-top: 10rem;  /* کاهش فاصله زیاد برای تعادل بیشتر */
   }
 
     .dropdown-toggle {
       cursor: pointer;
       font-size: 1.5rem;
-      color: var(--primary-color);
+      color: #6A453B;
       margin-top: 1.5rem;
       transition: transform 0.8s ease;
     }
@@ -107,7 +107,7 @@
 
     nav a {
       text-decoration: none;
-      color: var(--primary-color);
+      color: var(--highlight-color);
       font-weight: bold;
       font-style: italic;
       position: relative;
@@ -149,16 +149,15 @@
       gap: 0rem;
       padding: 0rem;
       flex-wrap: wrap;
-      color: var(--primary-color);
+      color: #7399BD;
     }
 
     .about-text {
       flex: 1;
       max-width: 600px;
-      font-size: 1.3rem;
+      font-size: 1.65rem;
       color: var(--primary-color);
       font-family: 'Tinos', serif;
-      font-style: italic;
     }
 
     .about-img {
@@ -174,18 +173,18 @@
      /* بخش تایم‌لاین */
     #timeline {
       background-color: var(--secondary-color);
-      padding: 1rem 0 1rem 0;
+      padding: 2rem 0 1rem 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: var(--primary-color);
+      color: #6A453B;
       font-family: 'Tinos', serif;
-      font-size: 1.3rem;
+      font-size: 1.45rem;
 
     }
 
     #portfolio {
-      background: linear-gradient(to top, var(--primary-color) 5%, var(--secondary-color) 80%);
+      background: linear-gradient(to top, var(--primary-color) 5%, var(--secondary-color) 15%);
     }
 
     .project {
@@ -194,11 +193,10 @@
       align-items: center;
       text-align: center;
       margin-bottom: 3rem;
-      padding-bottom: 3rem;
+      padding-bottom: 10rem;
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-style: italic;
-      font-size: 1.5rem;
+      font-weight: 300;
+      font-size: 1.6rem;
       color: 6A453B;
     }
 
@@ -235,7 +233,7 @@
 }
 
 .project-img-wrapper:hover img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 .project-img-wrapper {
   position: relative;
@@ -283,13 +281,13 @@
 }
 
 .slider-controls button {
-  background-color: rgba(28, 71, 127, 0.8);
-  color: #fff;
+  background-color: rgba(28, 71, 127, 1);
+  color: #E9E2CE;
   border: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   padding: 1rem;
-  opacity: 0.4;
+  opacity:0.7;
 }
 
 .slider-controls button:hover {
@@ -299,22 +297,23 @@
 .overlay {
   position: absolute;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+  color: #6A453B;
   width: 100%;
-  padding: 1rem;
+  padding: 2rem;
   text-align: center;
 }
 .project-overlay {
-  background-color: rgba(250, 255, 250, 0.5); /* کادر سفید نیمه‌شفاف */
-  color: #333; /* رنگ تیره برای نوشته */
+  background-color: var(--secondary-color); /* کادر سفید نیمه‌شفاف */
+  color: #6A453B; /* رنگ تیره برای نوشته */
   padding: 1.5rem;
-  border-radius: 12px;
-  margin-top: 1rem;
+  border-radius: 125px;
+  margin-top: 1.5rem;
   line-height: 1.8;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
+  font-weight: bold;
   max-width: 700px;
-  text-align: left;
+  text-align: center;
 }
 
 
@@ -340,15 +339,15 @@
 
 /* استایل برای هر ویدیو */
 .video-item {
-  background: #fff;
-  border-radius: 8px;
+  background: #E9E2CE;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.5s ease;
 }
 
 .video-item:hover {
-  transform: scale(1.02);
+  transform: scale(1.04);
 }
 
 /* Thumbnail ویدیو */
@@ -389,10 +388,11 @@
 
 
     #contact {
-      background: radial-gradient(circle at center, var(--highlight-color) 0%, var(--highlight-color) 10%, var(--primary-color) 45%, var(--primary-color) 75%);
+      background: linear-gradient(to top, #6A453B 0%, var(--primary-color) 40%);
+    
       color: var(--secondary-color);
       text-align: center;
-      padding: 2rem;
+      padding: 10rem;
       text-align: center;
       padding: 2rem;
       width: 100%;
@@ -400,15 +400,17 @@
       text-align: center;
 }
 .contact-section {
-  background: radial-gradient(circle at center, var(--highlight-color) 0%, var(--highlight-color) 10%, var(--primary-color) 30%, var(--primary-color) 75%);
   padding: 4rem 2rem;
   width: 100%;
+
 
 }
 
 .contact {
   max-width: 600px;
   margin: auto;
+   padding: 20rem;
+
 }
 
 .contact-toggle-list {
@@ -482,7 +484,7 @@
 
 .contact-item.active .contact-content {
   max-height: 200px;
-  padding: 1rem;
+  padding: 3rem;
 }
 
 .contact-content a {
@@ -507,7 +509,7 @@
 }
 
 .contact-content p {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
 }
 
 
