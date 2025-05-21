@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hanie Abbaspour | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-font-face.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:wght@500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,12 +78,35 @@
   footer p {
     margin-top: 10rem;  /* کاهش فاصله زیاد برای تعادل بیشتر */
   }
+  .language-switcher {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+}
+
+.language-switcher a {
+  background-color: var(--primary-color);
+  opacity: 35%;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  font-family: sans-serif;
+}
+
+.language-switcher a:hover {
+  background-color: var(--secondary-color);
+}
+
 
     .dropdown-toggle {
       cursor: pointer;
-      font-size: 1.5rem;
+      font-size: 2rem;
       color: #6A453B;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
       transition: transform 0.8s ease;
     }
 
@@ -600,7 +624,10 @@
   </style>
 </head>
 <body>
+
+
   <header>
+  
     <h1>Hanie Abbaspour</h1>
     <p>Motion & Graphic Designer | an unofficial artist</p>
     <div class="dropdown-toggle" onclick="toggleMenu()">▼</div>
@@ -610,6 +637,9 @@
       <a href="#reel">My videos</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div class="language-switcher">
+  <a href="fa.html">مشاهده نسخه فارسی</a>
+</div>
   </header>
 
   <section id="about">
