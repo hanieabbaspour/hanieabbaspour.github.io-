@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hanie Abbaspour | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gandom-font@0.8.0/dist/font-face.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:wght@500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,30 +30,26 @@
       --primary-color: #1C477F;
       --secondary-color: #E9E2CE;
       --highlight-color: #7399BD;
-      --font-main: 'Inter', sans-serif;
+      --font-main: 'Gandom', sans-serif;
       --font-heading: 'Dancing Script', cursive;
       --font-subheading: 'Playfair Display', serif;
     }
 
-    @font-face {
-  font-family: 'IRANSans';
-  src: url('fonts/Doran-VF.ttf') format('ttf'),
-       url('fonts/DoranNoEn-VF.ttf') format('ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-
-body {
-  font-family: 'Doran', sans-serif;
+ .rtl {
   direction: rtl;
   text-align: right;
 }
 
+
     html, body {
       margin: 0;
-      padding: 0;
-      font-family: var(--font-main);
+  padding: 0;
+  overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+  box-sizing: border-box;
+  font-family: "Noto Sans Arabic", sans-serif;
       overflow-x: hidden;
+      outline: 1px solid red;
+
     }
 
     /* استایل‌های بخش‌ها */
@@ -69,8 +69,9 @@ body {
     }
 
     header h1 {
-      font-family: var(--font-heading);
-      font-size: 4rem;
+      font-family: "Noto Sans Arabic", sans-serif;
+      font-weight: bold;
+      font-size: 3.7rem;
       color: #6A453B;
       margin: 0;
     }
@@ -84,13 +85,13 @@ body {
       footer {
     background: linear-gradient(to bottom, #6A453B 0%, #E9E2CE 45%, #E9E2CE 100%);
     text-align: center;
-    padding-top: 38rem;  /* فاصله از بالای فوتر */
+    padding-top: 18rem;  /* فاصله از بالای فوتر */
     font-size: 0.8rem;
     color: #CEAA7A;
   }
 
   footer p {
-    margin-top: 10rem;  /* کاهش فاصله زیاد برای تعادل بیشتر */
+    margin-top: 6rem;  /* کاهش فاصله زیاد برای تعادل بیشتر */
   }
   
   .language-switcher {
@@ -110,7 +111,7 @@ body {
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s ease;
-  font-family: 'Vazirmatn', sans-serif;
+  font-family: 'Gandom', sans-serif;
 }
 
 .language-switcher a:hover {
@@ -176,39 +177,47 @@ body {
 
     #about h2, #portfolio h2 {
       color: var(--primary-color);
+        font-family: "Noto Sans Arabic", sans-serif;
     }
 
     #about {
       background-color: var(--secondary-color);
     }
 
-    .about-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0rem;
-      padding: 0rem;
-      flex-wrap: wrap;
-      color: #7399BD;
-    }
+   .about-content {
+  display: flex;
+  align-items: flex-start; /* یا center */
+  justify-content: space-between;
+  gap: 0rem;
+  padding: 0rem;
+  flex-wrap: wrap;
+  color: #7399BD;
+    overflow: hidden;
+}
 
-    .about-text {
-      flex: 1;
-      max-width: 600px;
-      font-size: 1.65rem;
-      color: var(--primary-color);
-      font-family: 'Tinos', serif;
-    }
+.about-text {
+  flex: 1;
+  max-width: 600px;
+  font-size: 1.65rem;
+  color: var(--primary-color);
+  font-family: 'Gandom', sans-serif;
+  text-align: right; /* برای راست‌چین کردن متن */
+}
 
-    .about-img {
-      flex: 1;
-      max-width: 700px;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      border-radius: 0;
-      box-shadow: none;
-    }
+.about-img {
+   flex: 1;
+  max-width: 700px;
+  width: 100%;
+  max-width: 100%; /* اضافه کردن این خط */
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  display: block; /* حذف فضای اضافی پایین تصویر */
+  flex-shrink: 1;
+
+}
+
     
      /* بخش تایم‌لاین */
     #timeline {
@@ -218,7 +227,7 @@ body {
       flex-direction: column;
       align-items: center;
       color: #6A453B;
-      font-family: 'Tinos', serif;
+      font-family: 'Gandom', sans-serif;
       font-size: 1.45rem;
 
     }
@@ -234,7 +243,7 @@ body {
       text-align: center;
       margin-bottom: 3rem;
       padding-bottom: 10rem;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Gandom', sans-serif;
       font-weight: 300;
       font-size: 1.6rem;
       color: 6A453B;
@@ -476,7 +485,7 @@ body {
   cursor: pointer;
   text-align: center;
   border: none;
-  font-family: "Roboto Flex", sans-serif;
+  font-family: 'Gandom', sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
@@ -504,7 +513,7 @@ body {
   padding: 0 1rem;
   background: background: rgba(206, 170, 122, 0.5);
   transition: max-height 0.4s ease, padding 0.4s ease;
-  font-family: "Roboto Flex", sans-serif;
+  font-family: 'Gandom', sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
@@ -530,7 +539,7 @@ body {
 .contact-content a {
   color: #E9E2CE;
   text-decoration: none;
-   font-family: "Roboto Flex", sans-serif;
+  font-family: 'Gandom', sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
@@ -662,9 +671,13 @@ body {
     <h2>من ؟</h2>
     <div class="about-content">
       <div class="about-text">
+      <div class="rtl">
         <p>
          من حانیه عباسپورم،دیزاینرم و  عاشق  سبک کلاسیک ولی بدنیا اومده تو عصر مدرنیته .روح من آفریده شده تا روی دیزاین تمرکز کنه و با خلق کردن ایده های نو به موندگاری برندها کمک کنه تا از مفیدبودنش مطمئن باشه .من عاشق قصه گویی هستم البته به سبک ویژه خودم من قصمو توی هویتی که برای برندتون خلق میکنم برای همه مخاطباتون تعریف میکنم.اگر افتخار به من بدید شما میتونید بازیگر نقش اصلی صه های من باشید.کافیه توی بخش تماس با من توی ایمیل یااهرروشی که خودتون دوست دارید پیام ارسال کنید
+         </p>
+     </div>
       </div>
+
       <img src="images/mi-foto-0.png" alt="Hanie Abbaspour" class="about-img" />
     </div>
  
