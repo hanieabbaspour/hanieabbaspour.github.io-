@@ -216,18 +216,58 @@
 }
 
     
-     /* بخش تایم‌لاین */
-    #timeline {
-      background-color: var(--secondary-color);
-      padding: 2rem 0 1rem 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: #6A453B;
-      font-family: 'Gandom', sans-serif;
-      font-size: 1.45rem;
+   /* 🔹بخش تایم‌لاین */
+#timeline {
+  background-color: var(--secondary-color);
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #6A453B;
+  font-family: var(--font-main);
+  font-size: 1.45rem;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-    }
+#timeline .timeline-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  gap: 3rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* 🔹استایل هر آیتم تایم‌لاین */
+#timeline .timeline-circle {
+  background: #f5f5f5;
+  padding: 1rem 1.5rem;
+  border-radius: 20px; /* مربع با گوشه‌های گرد */
+  text-align: justify; /* پاراگراف منظم */
+  max-width: 700px;
+  white-space: normal;
+  word-wrap: break-word;
+  flex-shrink: 0;
+  box-sizing: border-box;
+    align-items: center;
+}
+
+/* 🔹فلش بین آیتم‌ها */
+#timeline .timeline-arrow {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.timeline-arrow svg {
+  transform: rotate(90deg); /* چرخش به چپ */
+}
+
 
     #portfolio {
       background: linear-gradient(to top, var(--primary-color) 5%, var(--secondary-color) 15%);
@@ -586,40 +626,17 @@
 
       #timeline {
         flex-direction: column;
-        padding: 1rem;
+        padding: 2rem;
          width: 100%;
       }
       
-      #timeline {
-  padding: 1rem;
-  width: 100%;
-}
+    
 
-#timeline .timeline-circle {
-  min-width: 200px;
-  background: #f5f5f5;
-  padding: 1rem;
-  border-radius: 100%;
-  text-align: center;
+@media screen and (min-width: 769px) {
+  #timeline .timeline-arrow svg {
+    transform: rotate(180deg);
+  }
 }
-
-#timeline .timeline-arrow {
-  min-width: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#timeline .timeline-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding: 2rem;
-}
-
 /* 📱 حالت موبایل */
 @media screen and (max-width: 768px) {
   #timeline .timeline-container {
@@ -687,8 +704,8 @@
 </p>
     </div>
     <div class="timeline-arrow">
-      <svg width="80" height="30">
-        <line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/>
+      <svg width="80" height="20">
+        <line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="7"/>
         <polygon points="70,10 80,15 70,20" fill="#1C477F"/>
       </svg>
     </div>
@@ -699,7 +716,7 @@
     </div>
     <div class="timeline-arrow">
       <svg width="80" height="30">
-        <line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="4"/>
+        <line x1="0" y1="15" x2="70" y2="15" stroke="#1C477F" stroke-width="7"/>
         <polygon points="70,10 80,15 70,20" fill="#1C477F"/>
       </svg>
     </div>
