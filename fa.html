@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hanie Abbaspour | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&family=Markazi+Text:wght@400..700&family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">
@@ -28,664 +22,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,GRAD@8..144,100..1000,-177&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <style>
-    /* تعریف متغیرهای CSS */
-    :root {
-      --primary-color: #1C477F;
-      --secondary-color: #E9E2CE;
-      --highlight-color: #7399BD;
-      --font-main: 'Gandom', sans-serif;
-      --font-heading: 'Dancing Script', cursive;
-      --font-subheading: 'Playfair Display', serif;
-    }
-
- .rtl {
-  direction: rtl;
-  text-align: right;
-}
-
-
-    html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* جلوگیری از اسکرول افقی */
-  box-sizing: border-box;
-  font-family: "Noto Sans Arabic", sans-serif;
-      overflow-x: hidden;
-      outline: 1px solid red;
-
-    }
-
-    /* استایل‌های بخش‌ها */
-    section, header, footer {
-      min-height: 95vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      padding: 1rem 1rem;
-    }
-
-    /* استایل header */
-    header {
-      background: linear-gradient(to bottom, var(--secondary-color), var(--secondary-color) 55%);
-      text-align: center;
-      justify-content: center;
-    }
-
-    header h1 {
-       ont-family: "Markazi Text", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-      font-size: 3.7rem;
-      color: #6A453B;
-      margin: 0;
-    }
-
-    header p {
-      color: #6A453B;
-      font-style: italic;
-      font-family: "Lateef", serif;
-  font-weight: 200;
-  font-style: normal;
-        font-size: 1.7rem;
-      margin-top: 0.45rem;
-    }
-    
-      footer {
-    background: linear-gradient(to bottom, #6A453B 0%, #E9E2CE 45%, #E9E2CE 100%);
-    text-align: center;
-    padding-top: 18rem;  /* فاصله از بالای فوتر */
-    font-size: 0.8rem;
-    color: #CEAA7A;
-  }
-
-  footer p {
-    margin-top: 6rem;  /* کاهش فاصله زیاد برای تعادل بیشتر */
-  }
-  
-  .language-switcher {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 999;
-  direction: rtl;
-  text-align: right;
-}
-
-.language-switcher a {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-  font-family: 'Gandom', sans-serif;
-}
-
-.language-switcher a:hover {
-  background-color: var(--secondary-color);
-}
-
-
-    .dropdown-toggle {
-      cursor: pointer;
-      font-size: 2rem;
-      color: #6A453B;
-      margin-top: 2rem;
-      transition: transform 0.8s ease;
-    }
-
-    .dropdown-toggle:hover {
-      transform: translateY(5px);
-    }
-
-    /* منو */
-    nav {
-      display: none;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1.5rem;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    nav.active {
-      display: flex;
-      opacity: 1;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #6A453B;
-  font-family: "Markazi Text", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-          font-size: 1.4rem;
-      position: relative;
-      padding: 0.5rem 1rem;
-    }
-
-    nav a:hover::after {
-      content: "";
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: #001f3f;
-    }
-
-    /* بخش‌ها */
-    h2 {
-      text-align: center;
-      font-size: 5.5rem;
-      margin-top: 80px;
-      margin-bottom: 3rem;
-      font-family: var(--font-subheading);
-    }
-
-    #about h2, #portfolio h2 {
-    color: var(--primary-color);
-    font-family: "Markazi Text", serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    }
-
-    #about {
-      background-color: var(--secondary-color);
-    }
-
-   .about-content {
-  display: flex;
-  align-items: flex-start; /* یا center */
-  justify-content: space-between;
-  gap: 0rem;
-  padding: 0rem;
-  flex-wrap: wrap;
-  color: #7399BD;
-    overflow: hidden;
-}
-
-.about-text {
-  flex: 1;
-  max-width: 600px;
-  font-size: 1.65rem;
-  color: var(--primary-color);
-  font-family: "Lateef", serif;
-  font-weight: 500;
-  font-style: normal;
-  text-align: right; /* برای راست‌چین کردن متن */
-}
-
-.about-img {
-    width: 100%;
-  max-width: 500px;  /* عکس حداکثر 700px عرض میگیره */
-  height: auto;
-  object-fit: contain;
-  border-radius: 0;
-  box-shadow: none;
-  display: block; /* حذف فضای اضافی پایین تصویر */
-  flex-shrink: 1;
-}
-
-    
-   /* 🔹بخش تایم‌لاین */
-#timeline {
-  background-color: var(--secondary-color);
-  padding: 2rem 0;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  color: #6A453B;
-  font-family: "Lateef", serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 1.45rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-#timeline .timeline-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;  
-  gap: 3rem;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding: 2rem;
-  width: 100%;
-}
-
-/* 🔹استایل هر آیتم تایم‌لاین */
-#timeline .timeline-circle {
-  background: #f5f5f5;
-  padding: 1rem 1.5rem;
-  border-radius: 25px; /* مربع با گوشه‌های گرد */
-  text-align: justify; /* پاراگراف منظم */
-  text-align: center; /* پاراگراف منظم */
-  max-width: 600px;
-  white-space: normal;
-  word-wrap: break-word;
-  flex-shrink: 0;
-  box-sizing: border-box;
-    align-items: center;
-}
-
-/* 🔹فلش بین آیتم‌ها */
-#timeline .timeline-arrow {
-  width: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.timeline-arrow svg {
-  transform: rotate(90deg); /* چرخش به چپ */
-}
-
-
-    #portfolio {
-      background: linear-gradient(to top, var(--primary-color) 5%, var(--secondary-color) 15%);
-    }
-
-    .project {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin-bottom: 3rem;
-      padding-bottom: 10rem;
-     font-family: "Lateef", serif;
-  font-weight: 500;
-  font-style: normal;
-      font-size: 1.4rem;
-      color: 6A453B;
-    }
-
-    /* استایل‌های پروژه‌ها */
-    .project-title {
-      font-size: 2.3rem;
-      font-weight: bold;
-      color: var(--primary-color);
-      margin-bottom: 2rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 700;
-    }
-
-    .project img {
-      width: 400px;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-.project-img-wrapper img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-
-
-
-.project-img-wrapper:hover .project-overlay {
-  opacity: 1;
-}
-
-.project-img-wrapper:hover img {
-  transform: scale(1.06);
-}
-.project-img-wrapper {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  width: 700px;  /* عرض مشخص اسلایدر */
-  height: auto;
-}
-
-.slider {
-  display: flex;
-  overflow: hidden;
-  position: relative;
-}
-
-
-.slide {
-  display: none;
-  min-width: 100%;
-  position: relative;
-}
-
-.slide.active {
-  display: block;
-}
-
-.slide img {
-  width: 100%;
-  display: block;
-}
-
-.slide img {
-  height: auto;
-  max-width: 100%;
-}
-
-
-.slider-controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-}
-
-.slider-controls button {
-  background-color: rgba(28, 71, 127, 1);
-  color: #E9E2CE;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 1rem;
-  opacity:0.7;
-}
-
-.slider-controls button:hover {
-  opacity: 0.9;
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
-  color: #E9E2CE;
-  width: 100%;
-  padding: 1rem;
-  text-align: center;
-}
-.project-overlay {
-  background-color: var(--secondary-color); /* کادر سفید نیمه‌شفاف */
-  color: #6A453B; /* رنگ تیره برای نوشته */
-  padding: 1.5rem;
-  border-radius: 5px;
-  margin-top: 1.5rem;
-  line-height: 1.8;
-  font-size: 1.7rem;
-  font-weight: bold;
-  max-width: 700px;
-  text-align: center;
-}
-
-
-    /* برای ویدئو */
-    #reel {
-       padding: 2rem;
-       background-color: var(--primary-color);
-      color: var(--secondary-color);
-    }
-
-    #reel h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-/* گالری ویدیو: استفاده از Grid برای نمایش کنار هم */
-.video-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 1.5rem;
-  padding: 1rem;
-}
-
-/* استایل برای هر ویدیو */
-.video-item {
-  background: #E9E2CE;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.5s ease;
-}
-
-.video-item:hover {
-  transform: scale(1.04);
-}
-
-/* Thumbnail ویدیو */
-.video-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* توضیحات ویدیو */
-.video-description {
-  padding: 1rem;
-  text-align: left;
-}
-
-.video-description h3 {
-  margin: 0.5rem 0;
-  font-size: 1.2rem;
-  color: var(--primary-color);
-}
-
-.video-description p {
-  margin: 0;
-  font-size: 1rem;
-  color: var(--primary-color);
-}
-.video-item video {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.video-item:hover video {
-  transform: scale(1.02);
-}
-
-
-    #contact {
-      background: linear-gradient(to top, #6A453B 0%, var(--primary-color) 40%);
-    
-      color: var(--secondary-color);
-      text-align: center;
-      padding: 10rem;
-      text-align: center;
-      padding: 2rem;
-      width: 100%;
-      margin: auto;
-      text-align: center;
-}
-.contact-section {
-  padding: 4rem 2rem;
-  width: 100%;
-
-
-}
-
-.contact {
-  max-width: 600px;
-  margin: auto;
-   padding: 20rem;
-
-}
-
-.contact-toggle-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.contact-item {
-  border: 0px solid #ccc;
-  border-radius: 15px;
-  overflow: hidden;
-  transition: 0.3s;
-}
-
-.contact-toggle {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  color: #E9E2CE;
-  padding: 1rem;
-  font-size: 1.1rem;
-  cursor: pointer;
-  text-align: center;
-  border: none;
-  font-family: 'Gandom', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "slnt" 0,
-    "wdth" 100,
-    "GRAD" -177,
-    "XOPQ" 96,
-    "XTRA" 468,
-    "YOPQ" 79,
-    "YTAS" 750,
-    "YTDE" -203,
-    "YTFI" 738,
-    "YTLC" 514,
-    "YTUC" 712;
-}
-
-.contact-toggle:hover {
-  background: #163b6b;
-}
-
-.contact-content {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 1rem;
-  background: background: rgba(206, 170, 122, 0.5);
-  transition: max-height 0.4s ease, padding 0.4s ease;
-  font-family: 'Gandom', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "slnt" 0,
-    "wdth" 100,
-    "GRAD" -177,
-    "XOPQ" 96,
-    "XTRA" 468,
-    "YOPQ" 79,
-    "YTAS" 750,
-    "YTDE" -203,
-    "YTFI" 738,
-    "YTLC" 514,
-    "YTUC" 712;
-}
-
-.contact-item.active .contact-content {
-  max-height: 200px;
-  padding: 3rem;
-}
-
-.contact-content a {
-  color: #E9E2CE;
-  text-decoration: none;
-  font-family: 'Gandom', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "slnt" 0,
-    "wdth" 100,
-    "GRAD" -177,
-    "XOPQ" 96,
-    "XTRA" 468,
-    "YOPQ" 79,
-    "YTAS" 750,
-    "YTDE" -203,
-    "YTFI" 738,
-    "YTLC" 514,
-    "YTUC" 712;
-}
-
-.contact-content p {
-  margin: 1rem 0;
-}
-
-
-
-    /* استایل‌های موبایل */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-
-      h2 {
-        font-size: 2.4rem;
-      }
-
-      .about-content {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .about-img, .project img {
-        max-width: 100%;
-        height: auto;
-      }
-
-      nav a {
-        padding: 1rem 2rem;
-      }
-
-      #timeline {
-        flex-direction: column;
-        padding: 2rem;
-         width: 100%;
-      }
-      
-    
-
-@media screen and (min-width: 769px) {
-  #timeline .timeline-arrow svg {
-    transform: rotate(180deg);
-  }
-}
-/* 📱 حالت موبایل */
-@media screen and (max-width: 768px) {
-  #timeline .timeline-container {
-    flex-direction: column;
-    overflow-x: hidden;
-    gap: 1.5rem;
-  }
-
-  #timeline .timeline-arrow {
-    transform: rotate(90deg);
-  }
-
-  #timeline .timeline-circle {
-    border-radius: 20px; /* بیضی بشه برای حالت عمودی */
-  }
-}
-
-      .project-img-wrapper {
-  width: 100%;
-}
-
-}
-    
-  </style>
-</head>
-<body>
 
 <div class="language-switcher">
   <a href="index.html">En</a>
@@ -745,7 +81,7 @@
   <div class="timeline-container">
     <div class="timeline-circle">
       <h3>یکـهزاروچـهارصـدویـک</h3>
-      <p>آغاز مسیر من در طراحی، در شرکت افرا نتورک بود؛ جایی که هر روز فرصتی بود برای فهمی تازه و خلق تصاویری که بی‌صدا، داستان فضای دیجیتال را بازمی‌گفتند. آنجا، من تنها محتوا نمی‌آفریدم، بلکه پلی می‌ساختم میان احساس و نگاه مخاطب.
+      <p>آغاز مسیر من در طراحی، در شرکت افرا نتورک بود؛ جایی که هر روز فرصتی بود برای فهمی تازه و خلق تصاویری که بی‌صدا، داستان فضای دیجیتال را بازمی‌گفتند. آنجا، من تنها محتوا نمی‌آفریدم، پلی می‌ساختم میان احساس و نگاه مخاطب
 </p>
     </div>
     <div class="timeline-arrow">
@@ -756,7 +92,7 @@
     </div>
     <div class="timeline-circle">
       <h3>یکـهزارو چهارصـدو دو</h3>
-      <p>در مسیر ، به صورت مستقل(پروژه محور) با کنجکاوی و ظرافت، ویدئوهایی برای یوتیوب ساختم، مدیریت شبکه‌های اجتماعی را آموختم و به عهده گرفتم و با طراحی حرکت آشنا و عجین گشتم؛  هر روز با کنجکاوی ظرف دانش خود را بزرگترنمودم و  تحصیل در  صنایع غذایی را پیش میبردم.
+      <p>در مسیر ، به صورت مستقل(پروژه محور) با کنجکاوی و ظرافت، ویدئوهایی و تصاویری برای بستر دیجیتال ساختم، مدیریت شبکه‌های اجتماعی را آموختم و به عهده گرفتم و با طراحی گرافیک متحرک آشنا و عجین گشتم؛  هر روز با کنجکاوی ظرف دانش خود را بزرگتر نمودم و  تحصیل در مهندسی را پیش بردم
 </p>
     </div>
     <div class="timeline-arrow">
@@ -767,7 +103,10 @@
     </div>
     <div class="timeline-circle">
       <h3>یکهــزاروچهارصـد و سـه</h3>
-      <p>در این روزها، به‌صورت تمام‌وقت در نقش کارشناس توسعه ارتباطات، که در دل آن به عنوان متخصص برند شناخته می‌شوم، همراه با تمرکزی نرم و دقیق بر طراحی گرافیک و حرکت فعالیت می‌کنم. در کنار این مسیر، فرصت یافته‌ام تا در پروژه‌ برندسازی به عنوان مشاور برند و طراح هویت بصری قصه سرایی بصری بنمایم. همزمان، در پی آنم که ابزارهای خلاقانه‌ام را فراتر ببرم و با یادگیری دنیای سه‌بعدی ، و کمی طراحی وب، دنیای نوینی از بیان و آفرینش را بگشایم.
+      <p> این روزها، به‌صورت تمام‌وقت به عنوان  دیزاینر با تمرکز بر طراحی گرافیک و گرافیک متحرک فعالیت می‌کنم.  فرصت یافته‌ام تا در پروژه‌ برندسازی در نقش مشاور برند و طراح هویت بصری قصه سرایی بصری‌ام را پیاده کنم. همزمان، در پی آنم که ابزارهای خلاقانه‌را به کار گیرم و مهارت هایم را توسعه بدهم 
+      <P>
+      
+      </P>در تلاشم تا با تجربه بیشتر تکنولوژی و هوش مصنوعی و ترکیب آن با پژوهش بر زیبایی شناسی کلاسیک ، دنیای نوینی از بیان و آفرینش را بگشایم
 </p>
     </div>
   </div>
@@ -782,32 +121,42 @@
    <div class="project-img-wrapper">
       <img src="images/bagmockup.png" alt="norooz giftbag by hanieabbaspour">
         <div class="project-overlay">
-        <p>برای طراحی این ساک دستی، به جست‌وجوی راهی رفتم میان خیال و ریشه—میان نقش‌های اصیل ایرانی و سادگی مدرن.
+        <p>برای طراحی این ساک دستی، به جست‌وجوی طرحی رفتم میان خیال و ریشه—میان نقش‌های اصیل ایرانی و سادگی مدرن
 روایت این مسیر، در نهایت به خلق اثری انجام شد که پاکت کوچک جلوی آن،  برشی  از قالی‌های کهن بود؛
-و کنار آن، نجوایی از نوروز، با شعری که هر بهار با خود زمزمه‌اش می‌کنیم.
-ساک دستی، تنها یک بسته‌بندی نبود—لحظه‌ای بود از حضور میراث، در لباسی نو.
+.و کنار آن، شعری که هر بهار همه جا حضوردارد
+<P>
 
+</P>
+!هرروزتان نوروز! نوروزتان پیروز
+<p>
+
+</p>
+.ساک دستی، تنها یک بسته‌بندی نبود،لحظه‌ای بود از حضور میراث، در قامتی نو
+<P>
+
+</P>
 اما آن‌چه بیش از همه در خاطرم نشست، برق نگاه‌هایی بود که پیش از گشودن هدایای درون،
-در بافت و داستان این ساک غرق می‌شدند—و آن‌جا بود که دانستم، لمس‌شدن، گاهی پیش از دیده‌شدن اتفاق می‌افتد.</p>
+در بافت و داستان این ساک غرق می‌شدند—و آن‌جا بود که دانستم، لمس‌شدن، گاهی پیش از دیده‌شدن اتفاق می‌افتد</p>
       </div>
     </div>
 
  <div class="project">
-  <h3 class="project-title">"کارت ویزیت برای شرکت هیربدان"</h3>
+  <h3 class="project-title">"کارت ویزیت  شرکت هیربدان"</h3>
   <div class="project-img-wrapper">
     <div class="slider">
       <!-- Slide 1 -->
       <div class="slide active"> <!-- کلاس active برای اسلاید فعال -->
         <img src="images/buisness-card-mockup.png" alt="business card 1" />
         <div class="overlay">
-          <p>The challenge? Hirbodan had always leaned into traditional elements and hadn’t had a fresh, impactful business card in years.</p>
+          <p>هیربدان، برند کهنه‌کاری‌ست؛ بیست‌و‌چهار سال در صنعت حضور داشته، بی‌آن‌که فرصتی برای تأمل در چهره‌ی بیرونی‌اش فراهم شده باشد. هویتی بصری که گویی سال‌ها در سکوت مانده بود—بی‌صدا و بی‌نام.
+</p>
         </div>
       </div>
       <!-- Slide 2 -->
       <div class="slide">
         <img src="images/FRONT-bc.png" alt="business card 2" />
         <div class="overlay">
-          <p>Now it was my turn to nudge the brand one step out of its old comfort zone.
+          <p>اکنون نوبت من بود تا برند را با نگاهی تازه اندکی از چارچوب‌های آشنایش بیرون ببرم
 </p>
         </div>
       </div>
@@ -815,7 +164,9 @@
       <div class="slide">
         <img src="images/BACK-bc.png" alt="business card 3" />
         <div class="overlay">
-          <p>I think the final result spoke for itself — and the satisfied smile on the department manager’s face said the rest.
+          <p>به گمانم آخرین اثر خود را بی‌نیاز از توضیح؛ با نگاه رضایت بخش مدیرم، آن‌چه ناگفته مانده بود را تمام و کمال روایت کرد.
+
+
 </p>
         </div>
       </div>
@@ -829,63 +180,62 @@
   </div>
 
   <div class="project-overlay">
-    <p>Designing this business card was the hardest part!
-    I went through countless versions — nothing felt quite right..."Continue reading in the slides"
-.</p>
+    <p>طراحی این کارت ویزیت، احتمالا یکی از  سخت‌ترین پروژه‌ها بود. نسخه‌های زیادی را آزمودم—اما هیچ‌کدام آن حسِ لازم را نداشتند ادامه‌ی روایت در اسلایدها
+</p>
   </div>
 </div>
 
 <div class="project">
-  <h3 class="project-title">"Hirbodan planner Design"</h3>
+  <h3 class="project-title">"دفتر برنامه ریز هیربدان"</h3>
   <div class="project-img-wrapper">
     <div class="slider">
       <!-- Slide 1 -->
       <div class="slide active">
         <img src="images/cover01.png" alt="planner cover" />
         <div class="overlay">
-          <p>Planner Cover</p>
+          <p>جلد دفتربرنامه ریز</p>
         </div>
       </div>
       <!-- Slide 2 -->
       <div class="slide">
         <img src="images/planner01.png" alt="monthly planning page" />
         <div class="overlay">
-          <p>monthly planning page</p>
+          <p>صفحات برنامه ریز ماهانه</p>
         </div>
       </div>
       <!-- Slide 3 -->
       <div class="slide">
         <img src="images/planner02.png" alt="Explore details-weekly planing session" />
         <div class="overlay">
-          <p>Explore details-weekly planing session</p>
+          <p> برنامه ریز هفتگی</p>
         </div>
       </div>
       <!-- Slide 4 -->
       <div class="slide">
         <img src="images/planner03.png" alt="Project managing is very important" />
         <div class="overlay">
-          <p>Project managing is very importan</p>
+          <p>مدیریت پروژه برای هیربدان درجه اهمیت بالایی داشت</p>
         </div>
       </div>
       <!-- Slide 5 -->
       <div class="slide">
         <img src="images/planner04.png" alt="daily check-boxes are important" />
         <div class="overlay">
-          <p>daily check-boxes for your tasks</p>
+          <p>چک لیست های روزانه این دفتر،کاشف جزئیات </p>
         </div>
       </div>
       <!-- Slide 6 -->
       <div class="slide">
         <img src="images/planner05.png" alt="note pages-always flexible for your special needs" />
         <div class="overlay">
-          <p>note pages-always flexible for your special needs</p>
+          <p>صفحات یادداشت برای انعطاف بیشتر در قبال نیازهای شخصی</p>
         </div>
       </div>
       <!-- Slide 7 -->
       <div class="slide">
         <img src="images/planner06.png" alt="Do you need to check the calender?Here it is!" />
         <div class="overlay">
-          <p>Do you need to check the calender?Here it is!</p>
+          <p>اگر نیازی برای بررسی  تقویم داشتید </p>
         </div>
       </div>
     </div>
@@ -898,20 +248,30 @@
   </div>
 
   <div class="project-overlay">
-    <p>Everyone who knows me knows how obsessed I am with planning. Without a plan, my whole life feels like it's spiraling out of control — and once I lose that sense of control, staying calm and focused becomes almost impossible.
-That’s why I always end up creating my own custom planners by hand. I’ve never found a planner out there that truly checks all my boxes.
+    <p>برنامه‌ریزی برای من صرفاً نظم نیست — راهی‌ست برای زیستن.
+بی‌برنامه که باشم، انگار رشته‌ی روزها از هم می‌گسلد و تمرکز و آرامش از من فاصله می‌گیرد
 
-So, with all that said, you can probably imagine how excited I was when my manager said we needed to design a planner for our clients. I was like: "Trust me on this — just hand it over to me!"
+شاید به همین دلیل، هیچ‌گاه دفتر برنامه‌ریزی‌ای نیافتم که با نیاز ذهنم هماهنگ باشد.
+و من، همیشه ترجیح دادم نسخه‌ای بسازم، به سبک خویش و با دستان خودم.
 
-And guess what? My manager loved the result so much that there wasn’t even a single comment or edit. She immediately said:
-“It’s perfect! Let’s print it — how soon can we have it ready?”</p>
+وقتی مدیرم گفت برای هدیه‌ای به دفتر برنامه‌ریزی نیاز داریم، اشتیاقی در دلم نشست.
+نگاهش کردم و گفتم:
+«لطفاً این پروژه را به من بسپارید.»
+
+این بهترین فرصت بود تا سبک برنامه ریزی ام را با قالبی نو به باقی افراد نمایش دهم.
+
+ساعت‌ها آزمون و دقت در طراحی گذشت.
+هنگام پرزنت کارمدیرم  پس از چنددقیقه سکوت و با لحن راضی گفت:
+«چه زمانی می‌توانیم سفارش چاپش را ثبت کنیم؟»
+
+و من، بی‌آنکه چیزی بگویم، لحظه ای حس کردم  دقیقاً در جای درست ایستاده‌ام.</p>
   </div>
 </div>
 
   </section>
 
   <section id="reel">
-    <h2>My videos</h2>
+    <h2>🎞️ویدیوگرافـی</h2>
     <div class="video-gallery">
     <!-- Video 1 -->
     <div class="video-item">
@@ -957,7 +317,6 @@ And guess what? My manager loved the result so much that there wasn’t even a s
     <p>"A Wave from the Future Generation"</p>
   </div>
 </div>
-
 
 <div class="video-item">
   <a href="videos/Unmute Comp-Latest Edit.mp4" target="_blank">
@@ -1035,55 +394,3 @@ And guess what? My manager loved the result so much that there wasn’t even a s
   <footer>
     <p>© 2025 Hanie Abbaspour | Designed with love & motion</p>
   </footer>
-
- 
-<script>
-document.querySelectorAll('.slider').forEach((slider, index) => {
-  const slides = slider.querySelectorAll('.slide');
-  const nextBtn = slider.parentElement.querySelector('.next-btn');
-  const prevBtn = slider.parentElement.querySelector('.prev-btn');
-  let currentIndex = 0;
-
-  function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    slides[index].classList.add('active');
-  }
-
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-  });
-
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showSlide(currentIndex);
-  });
-  
-});
-const toggles = document.querySelectorAll(".contact-toggle");
-
-  toggles.forEach((toggle) => {
-    toggle.addEventListener("click", () => {
-      const item = toggle.parentElement;
-      item.classList.toggle("active");
-    });
-  });
-  document.querySelectorAll('.video-item video').forEach(video => {
-  video.addEventListener('mouseover', () => {
-    video.play();
-  });
-  video.addEventListener('mouseout', () => {
-    video.pause();
-    video.currentTime = 0; // برگرده اول ویدیو
-  });
-});
-  function toggleMenu() {
-    const menu = document.getElementById('mainMenu');
-    menu.classList.toggle('active');
-  }
-
-
-</script>
-
-</body>
-</html>
