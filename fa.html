@@ -1,4 +1,10 @@
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hanie Abbaspour | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&family=Markazi+Text:wght@400..700&family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">
@@ -22,13 +28,676 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,GRAD@8..144,100..1000,-177&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <style>
+   /* تعریف متغیرهای CSS */
+    :root {
+      --primary-color: #1C477F;
+      --secondary-color: #E9E2CE;
+      --highlight-color: #7399BD;
+      --font-main: 'Gandom', sans-serif;
+      --font-heading: 'Dancing Script', cursive;
+      --font-subheading: 'Playfair Display', serif;
+    }
+
+ .rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+
+    html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+  box-sizing: border-box;
+  font-family: "Noto Sans Arabic", sans-serif;
+      overflow-x: hidden;
+      outline: 1px solid red;
+
+    }
+
+    /* استایل‌های بخش‌ها */
+    section, header, footer {
+      min-height: 95vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 1rem 1rem;
+    }
+
+    /* استایل header */
+    header {
+      background: linear-gradient(to bottom, var(--secondary-color), var(--secondary-color) 55%);
+      text-align: center;
+      justify-content: center;
+    }
+
+    header h1 {
+       font-family: "Markazi Text", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+      font-size: 3.7rem;
+      color: #6A453B;
+      margin: 0;
+    }
+
+    header p {
+      color: #6A453B;
+      font-style: italic;
+      font-family: "Lateef", serif;
+  font-weight: 200;
+  font-style: normal;
+        font-size: 1.7rem;
+      margin-top: 0.45rem;
+    }
+    
+      footer {
+    background: linear-gradient(to bottom, #6A453B 0%, #E9E2CE 45%, #E9E2CE 100%);
+    text-align: center;
+    padding-top: 18rem;  /* فاصله از بالای فوتر */
+    font-size: 0.8rem;
+    color: #CEAA7A;
+  }
+
+  footer p {
+    margin-top: 6rem;  /* کاهش فاصله زیاد برای تعادل بیشتر */
+  }
+  
+  .language-switcher {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+  direction: rtl;
+  text-align: right;
+}
+
+.language-switcher a {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  font-family: 'Gandom', sans-serif;
+}
+
+.language-switcher a:hover {
+  background-color: var(--secondary-color);
+}
+
+
+    .dropdown-toggle {
+      cursor: pointer;
+      font-size: 2rem;
+      color: #6A453B;
+      margin-top: 2rem;
+      transition: transform 0.8s ease;
+    }
+
+    .dropdown-toggle:hover {
+      transform: translateY(5px);
+    }
+
+    /* منو */
+    nav {
+      display: none;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    nav.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #6A453B;
+  font-family: "Markazi Text", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+          font-size: 1.4rem;
+      position: relative;
+      padding: 0.5rem 1rem;
+    }
+
+    nav a:hover::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #001f3f;
+    }
+
+    /* بخش‌ها */
+    h2 {
+      text-align: center;
+      font-size: 5.5rem;
+      margin-top: 80px;
+      margin-bottom: 3rem;
+       font-family: "Markazi Text", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+    }
+
+    #about h2, #portfolio h2 {
+    color: var(--primary-color);
+    font-family: "Markazi Text", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    }
+
+    #about {
+      background-color: var(--secondary-color);
+    }
+
+   .about-content {
+  display: flex;
+  align-items: flex-start; /* یا center */
+  justify-content: space-between;
+  gap: 0rem;
+  padding: 0rem;
+  flex-wrap: wrap;
+  color: #7399BD;
+    overflow: hidden;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+  font-size: 1.65rem;
+  color: var(--primary-color);
+  font-family: "Lateef", serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: right; /* برای راست‌چین کردن متن */
+}
+
+.about-img {
+    width: 100%;
+  max-width: 500px;  /* عکس حداکثر 700px عرض میگیره */
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  display: block; /* حذف فضای اضافی پایین تصویر */
+  flex-shrink: 1;
+}
+
+    
+   /* 🔹بخش تایم‌لاین */
+#timeline {
+  background-color: var(--secondary-color);
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #6A453B;
+  font-family: "Lateef", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.45rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#timeline .timeline-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  gap: 3rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* 🔹استایل هر آیتم تایم‌لاین */
+#timeline .timeline-circle {
+  background: #f5f5f5;
+  padding: 1rem 1.5rem;
+  border-radius: 25px; /* مربع با گوشه‌های گرد */
+  text-align: justify; /* پاراگراف منظم */
+  text-align: center; /* پاراگراف منظم */
+  max-width: 600px;
+  white-space: normal;
+  word-wrap: break-word;
+  flex-shrink: 0;
+  box-sizing: border-box;
+    align-items: center;
+}
+
+/* 🔹فلش بین آیتم‌ها */
+#timeline .timeline-arrow {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.timeline-arrow svg {
+  transform: rotate(90deg); /* چرخش به چپ */
+}
+
+
+    #portfolio {
+      background: linear-gradient(to top, var(--primary-color) 5%, var(--secondary-color) 15%);
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 10rem;
+     font-family: "Lateef", serif;
+  font-weight: 500;
+  font-style: normal;
+      font-size: 1.4rem;
+      color: 6A453B;
+    }
+
+    /* استایل‌های پروژه‌ها */
+    .project-title {
+      font-size: 2.3rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+       font-family: "Markazi Text", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+    }
+
+    .project img {
+      width: 400px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+.project-img-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+
+
+
+.project-img-wrapper:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-img-wrapper:hover img {
+  transform: scale(1.06);
+}
+.project-img-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 700px;  /* عرض مشخص اسلایدر */
+  height: auto;
+}
+
+.slider {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.slide {
+  display: none;
+  min-width: 100%;
+  position: relative;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+
+.slide img {
+  height: auto;
+  max-width: 100%;
+}
+
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.slider-controls button {
+  background-color: rgba(28, 71, 127, 1);
+  color: #E9E2CE;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 1rem;
+  opacity:0.7;
+}
+
+.slider-controls button:hover {
+  opacity: 0.9;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  color: #E9E2CE;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+.project-overlay {
+  background-color: var(--secondary-color); /* کادر سفید نیمه‌شفاف */
+  color: #6A453B; /* رنگ تیره برای نوشته */
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.7rem;
+  font-weight: bold;
+  max-width: 700px;
+  text-align: center;
+}
+
+
+    /* برای ویدئو */
+    #reel {
+       padding: 2rem;
+       background-color: var(--primary-color);
+      color: var(--secondary-color);
+    }
+
+    #reel h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* گالری ویدیو: استفاده از Grid برای نمایش کنار هم */
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* استایل برای هر ویدیو */
+.video-item {
+  background: #E9E2CE;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.5s ease;
+}
+
+.video-item:hover {
+  transform: scale(1.04);
+}
+
+/* Thumbnail ویدیو */
+.video-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* توضیحات ویدیو */
+.video-description {
+  padding: 1rem;
+  text-align: left;
+}
+
+.video-description h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.video-description p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+.video-item video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.video-item:hover video {
+  transform: scale(1.02);
+}
+
+
+    #contact {
+      background: linear-gradient(to top, #6A453B 0%, var(--primary-color) 40%);
+    
+      color: var(--secondary-color);
+      text-align: center;
+      padding: 10rem;
+      text-align: center;
+      padding: 2rem;
+      width: 100%;
+      margin: auto;
+      text-align: center;
+}
+.contact-section {
+  padding: 4rem 2rem;
+  width: 100%;
+
+
+}
+
+.contact {
+  max-width: 600px;
+  margin: auto;
+   padding: 20rem;
+
+}
+
+.contact-toggle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.contact-item {
+  border: 0px solid #ccc;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.contact-toggle {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #E9E2CE;
+  padding: 1rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  font-family: 'Gandom', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" -177,
+    "XOPQ" 96,
+    "XTRA" 468,
+    "YOPQ" 79,
+    "YTAS" 750,
+    "YTDE" -203,
+    "YTFI" 738,
+    "YTLC" 514,
+    "YTUC" 712;
+}
+
+.contact-toggle:hover {
+  background: #163b6b;
+}
+
+.contact-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  background: background: rgba(206, 170, 122, 0.5);
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  font-family: 'Gandom', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" -177,
+    "XOPQ" 96,
+    "XTRA" 468,
+    "YOPQ" 79,
+    "YTAS" 750,
+    "YTDE" -203,
+    "YTFI" 738,
+    "YTLC" 514,
+    "YTUC" 712;
+}
+
+.contact-item.active .contact-content {
+  max-height: 200px;
+  padding: 3rem;
+}
+
+.contact-content a {
+  color: #E9E2CE;
+  text-decoration: none;
+  font-family: 'Gandom', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" -177,
+    "XOPQ" 96,
+    "XTRA" 468,
+    "YOPQ" 79,
+    "YTAS" 750,
+    "YTDE" -203,
+    "YTFI" 738,
+    "YTLC" 514,
+    "YTUC" 712;
+}
+
+.contact-content p {
+  margin: 1rem 0;
+}
+
+
+
+    /* استایل‌های موبایل */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 2.4rem;
+      }
+
+      .about-content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .about-img, .project img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      nav a {
+        padding: 1rem 2rem;
+      }
+
+      #timeline {
+        flex-direction: column;
+        padding: 2rem;
+         width: 100%;
+      }
+      
+    
+
+@media screen and (min-width: 769px) {
+  #timeline .timeline-arrow svg {
+    transform: rotate(180deg);
+  }
+}
+/* 📱 حالت موبایل */
+@media screen and (max-width: 768px) {
+  #timeline .timeline-container {
+    flex-direction: column;
+    overflow-x: hidden;
+    gap: 1.5rem;
+  }
+
+  #timeline .timeline-arrow {
+    transform: rotate(90deg);
+  }
+
+  #timeline .timeline-circle {
+    border-radius: 20px; /* بیضی بشه برای حالت عمودی */
+  }
+}
+
+      .project-img-wrapper {
+  width: 100%;
+}
+
+}
+    
+  </style>
+</head>
+<body>
 
 <div class="language-switcher">
   <a href="index.html">En</a>
 </div>
 
   <header>  
-    <h1>🌷حـانیـه عباسـپور🌷</h1>
+   <h1>🌷حـانیـه عباسـپور🌷</h1>
     <p>گـرافیــک دیـزایــن/مــوشـن دیـزایــن/بـرنـدیـنـــگ</p>
     <div class="dropdown-toggle" onclick="toggleMenu()">▼</div>
     <nav id="mainMenu">
@@ -279,8 +948,8 @@
         <video src="videos/hanieabbaspourr-fasle10.mp4" muted preload="none" poster="images/thumbnail1.jpg"></video>
       </a>
       <div class="video-description">
-        <h3>Inspired by Function</h3>
-        <p>IKEA logo motion design.</p>
+        <h3>الهام گرفته از کارکرد</h3>
+        <p>متحرک سازی لوگوی برند ایکیا</p>
       </div>
     </div>
 
@@ -292,7 +961,7 @@
    
       <div class="video-description">
         <h3>Selfmate</h3>
-        <p>After watching the amazing show Mr. Robot, I felt inspired to create this video. I'm pleased with the result and hope it resonates with others.</p>
+        <p>بعد از دیدن سریال بینظیر مسترربات,با بازی بی نظیر رامی مالک مشتاق و راغب ساخت یک موشن گرافی از این سریال گشتم.</p>
       </div>
     </div>
 
@@ -304,7 +973,7 @@
       
       <div class="video-description">
         <h3>Rememb(her)</h3>
-        <p>"A title sequence for the film Her."</p>
+        <p>"HERتیتراژ فیلم"</p>
       </div>
     </div>
 
@@ -313,8 +982,8 @@
     <video src="videos/hanieabbaspour-s6.mp4" muted preload="none" poster="images/thumbnail1.jpg"></video>
   </a>
   <div class="video-description">
-    <h3>Papa Bot & Mini Mech</h3>
-    <p>"A Wave from the Future Generation"</p>
+    <h3>ربات پدروپسر!</h3>
+    <p>"سلامی از نسل جدید!"</p>
   </div>
 </div>
 
@@ -323,7 +992,7 @@
     <video src="videos/Unmute Comp-Latest Edit.mp4" muted preload="none" poster="images/thumbnail1.jpg"></video>
   </a>
   <div class="video-description">
-    <h3>Nowrooz roadtrip with hirbodan</h3>
+    <h3>انیمیشن سفر به ایران با هیربدان</h3>
     <p>"travelling around the iran"</p>
   </div>
 </div>
@@ -334,18 +1003,18 @@
 <!-- شروع بخش تماس -->
 <section id="contact" class="contact-section">
   <div class="contact">
-    <h2>Contact Me</h2>
+    <h2>✉️تماس با مـــن</h2>
     <div class="contact-toggle-list">
 
       <div class="contact-item">
-        <button class="contact-toggle">📧 Email</button>
+        <button class="contact-toggle">📧  ایمیل</button>
         <div class="contact-content">
           <p>hanieabbaspour22@outlook.com</p>
         </div>
       </div>
 
       <div class="contact-item">
-        <button class="contact-toggle">📱 Phone</button>
+        <button class="contact-toggle">📱 تلفن</button>
         <div class="contact-content">
           <p>+98 910 6657 188</p>
           <p>Banihashem Street, Tehran, Iran</p>
@@ -353,35 +1022,35 @@
       </div>
 
       <div class="contact-item">
-        <button class="contact-toggle">📷 Instagram</button>
+        <button class="contact-toggle">📷 اینستاگرام</button>
         <div class="contact-content">
           <a href="https://www.instagram.com/motion.mountain/" target="_blank">https://www.instagram.com/motion.mountain/</a>
         </div>
       </div>
 
       <div class="contact-item">
-        <button class="contact-toggle">🎬 YouTube</button>
+        <button class="contact-toggle">🎬 یوتیوب</button>
         <div class="contact-content">
           <a href="https://youtube.com/@motionbyhanie?si=oGO8nYYq7AQLss_5" target="_blank">https://youtube.com/@motionbyhanie?si=oGO8nYYq7AQLss_5</a>
         </div>
       </div>
 
       <div class="contact-item">
-        <button class="contact-toggle">💼 LinkedIn</button>
+        <button class="contact-toggle">💼 لینکداین</button>
         <div class="contact-content">
           <a href="https://linkedin.com/in/hanie-abbaspour" target="_blank">https://linkedin.com/in/hanie-abbaspour</a>
         </div>
       </div>
 
       <div class="contact-item">
-        <button class="contact-toggle">🎨 Behance</button>
+        <button class="contact-toggle">🎨 بیهنس</button>
         <div class="contact-content">
           <a href="https://behance.net/hanieabbaspour-2001" target="_blank">https://behance.net/hanieabbaspour-2001</a>
         </div>
       </div>
 
       <div class="contact-item">
-        <button class="contact-toggle">✈️ Telegram</button>
+        <button class="contact-toggle">✈️ تلگرام</button>
         <div class="contact-content">
           <a href="https://t.me/Motion_mountaiin" target="_blank">https://t.me/Motion_mountaiin</a>
         </div>
@@ -394,3 +1063,55 @@
   <footer>
     <p>© 2025 Hanie Abbaspour | Designed with love & motion</p>
   </footer>
+
+ 
+<script>
+document.querySelectorAll('.slider').forEach((slider, index) => {
+  const slides = slider.querySelectorAll('.slide');
+  const nextBtn = slider.parentElement.querySelector('.next-btn');
+  const prevBtn = slider.parentElement.querySelector('.prev-btn');
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  });
+  
+});
+const toggles = document.querySelectorAll(".contact-toggle");
+
+  toggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      const item = toggle.parentElement;
+      item.classList.toggle("active");
+    });
+  });
+  document.querySelectorAll('.video-item video').forEach(video => {
+  video.addEventListener('mouseover', () => {
+    video.play();
+  });
+  video.addEventListener('mouseout', () => {
+    video.pause();
+    video.currentTime = 0; // برگرده اول ویدیو
+  });
+});
+  function toggleMenu() {
+    const menu = document.getElementById('mainMenu');
+    menu.classList.toggle('active');
+  }
+
+
+</script>
+
+</body>
+</html>
