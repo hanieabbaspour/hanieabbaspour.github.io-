@@ -417,6 +417,19 @@
   padding: 1rem;
   text-align: center;
 }
+
+/* کپشن زیر تصویر در اسلایدر (مثل دفتر برنامه‌ریزی) */
+.slide-caption {
+  background: rgba(28, 71, 127, 0.9);
+  color: #E9E2CE;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Lateef", serif;
+  box-sizing: border-box;
+}
+
 .project-overlay {
   background-color: var(--secondary-color); /* کادر سفید نیمه‌شفاف */
   color: #6A453B; /* رنگ تیره برای نوشته */
@@ -786,6 +799,48 @@
   <section id="portfolio">
     <h2>طرح ها🪄</h2>
     <div class="project">
+  <h3 class="project-title">"نوژه"</h3>
+  <div class="project-img-wrapper">
+    <div class="slider">
+      <!-- Slide 1 -->
+      <div class="slide active">
+        <img src="images/nozheh01.png" alt="نوژه - تصویر اول" />
+        <div class="overlay">
+          <p>کپشن تصویر اول نوژه</p>
+        </div>
+        <div class="slide-caption">کپشن تصویر اول نوژه</div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide">
+        <img src="images/nozheh02.png" alt="نوژه - تصویر دوم" />
+        <div class="overlay">
+          <p>کپشن تصویر دوم نوژه</p>
+        </div>
+        <div class="slide-caption">کپشن تصویر دوم نوژه</div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide">
+        <img src="images/nozheh03.png" alt="نوژه - تصویر سوم" />
+        <div class="overlay">
+          <p>کپشن تصویر سوم نوژه</p>
+        </div>
+        <div class="slide-caption">کپشن تصویر سوم نوژه</div>
+      </div>
+    </div>
+
+    <!-- کنترل‌های قبلی/بعدی -->
+    <div class="slider-controls">
+      <button class="prev-btn">←</button>
+      <button class="next-btn">→</button>
+    </div>
+  </div>
+
+  <div class="project-overlay">
+    <p>توضیحات پروژه نوژه را اینجا بنویسید.</p>
+  </div>
+</div>
+
+    <div class="project">
     <h3 class="project-title">"ساک دستی هدیه ویژه نوروز"</h3>
    <div class="project-img-wrapper">
       <img src="images/bagmockup.png" alt="norooz giftbag by hanieabbaspour">
@@ -1115,3 +1170,4 @@ const toggles = document.querySelectorAll(".contact-toggle");
 
 </body>
 </html>
+
